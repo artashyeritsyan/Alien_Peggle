@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4327062815568502187}
   - component: {fileID: 5326640758534058274}
   m_Layer: 0
-  m_Name: peg
+  m_Name: GlassPeg
   m_TagString: peg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.38825914, g: 0.46177447, b: 0.93962264, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -144,6 +144,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   duration: 0.3
   transformedScale: {x: 1.1, y: 1.1}
+  pegSounClips:
+  - {fileID: 8300000, guid: 08d0675d52872264092241742bd73d1b, type: 3}
+  - {fileID: 8300000, guid: ae9f3438e794a334db2816ef4b83281e, type: 3}
+  - {fileID: 8300000, guid: 4ac09a9791aff5e4685283e3dd29151d, type: 3}
+  - {fileID: 8300000, guid: 0a8b3d61fe2c4334aa7bc5a0d92511c8, type: 3}
+  - {fileID: 8300000, guid: a584a45445776d84191a8d94679abca2, type: 3}
 --- !u!1 &8079276951650522820
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +232,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.18770024, g: 0.19800146, b: 0.6981132, a: 1}
+  m_Color: {r: 0.76792455, g: 0.9399539, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

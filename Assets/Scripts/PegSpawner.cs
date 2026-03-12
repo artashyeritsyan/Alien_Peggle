@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PegSpawner : MonoBehaviour
 {
     public float minX, maxX, minY, maxY, xInterval, yInterval;
-    public GameObject peg;
+    public List<GameObject> pegs;
 
 
     void Start()
@@ -17,15 +19,16 @@ public class PegSpawner : MonoBehaviour
         {
             for (float j = minX; j <= maxX; j += xInterval)
             {
+                int pegIndex = Random.Range(0, pegs.Count);
                 if (i % 2 == 0)
                 {
                     float offsetX = j + xInterval / 2;
                     if (offsetX > maxX) continue;
-                    Instantiate(peg, new Vector2(offsetX, i), Quaternion.identity);
+                    Instantiate(pegs[pegIndex], new Vector2(offsetX, i), Quaternion.identity);
                 }
                 else
                 {
-                    Instantiate(peg, new Vector2(j, i), Quaternion.identity);
+                    Instantiate(pegs[pegIndex], new Vector2(j, i), Quaternion.identity);
                 }
             }
         }

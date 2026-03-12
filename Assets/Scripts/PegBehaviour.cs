@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+
 
 public class PegBehaviour : MonoBehaviour
 {
@@ -10,15 +12,26 @@ public class PegBehaviour : MonoBehaviour
     private bool isStartScaling;
     private float elapsedTime = 0f;
 
+    [SerializeField] List<AudioClip> pegSounClips;
+    private AudioSource pegSound;
+
 
     private void Start()
     {
         startScale = transform.localScale;
+        pegSound = FindAnyObjectByType<AudioSource>();
     }
 
     public void ChangeSize()
     {
         isStartScaling = true;
+
+        if (pegSounClips.Count > 0)
+        {
+            int randomIndex = UnityEngine.Random.Range(0, pegSounClips.Count);
+            pegSound.clip = pegSounClips[randomIndex];
+            pegSound.Play();
+        }
     }
 
     void Update()
