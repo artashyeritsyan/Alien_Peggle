@@ -19,7 +19,7 @@ public class PegBehaviour : MonoBehaviour
     private void Start()
     {
         startScale = transform.localScale;
-        pegSound = FindAnyObjectByType<AudioSource>();
+        //pegSound = FindAnyObjectByType<AudioSource>();
     }
 
     public void ChangeSize()
@@ -29,8 +29,10 @@ public class PegBehaviour : MonoBehaviour
         if (pegSounClips.Count > 0)
         {
             int randomIndex = UnityEngine.Random.Range(0, pegSounClips.Count);
-            pegSound.clip = pegSounClips[randomIndex];
-            pegSound.Play();
+            //pegSound.clip = pegSounClips[randomIndex];
+            //pegSound.Play();
+
+            AudioManager.Play(pegSounClips[randomIndex]);
         }
     }
 
