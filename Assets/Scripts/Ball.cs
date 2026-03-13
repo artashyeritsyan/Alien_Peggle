@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public static event Action OnPointCollected;
-    public static event Action OnGameOver;
+    public static event Action OnBallDestroyed;
 
     [SerializeField] AudioSource pegSound;
     [SerializeField] List<AudioClip> pegSounClips;
@@ -15,7 +15,7 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("death"))
         {
             Destroy(gameObject);
-            OnGameOver?.Invoke();
+            OnBallDestroyed?.Invoke();
         }
 
         if (collision.gameObject.CompareTag("peg"))

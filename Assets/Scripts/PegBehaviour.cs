@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PegBehaviour : MonoBehaviour
 {
+
     public float duration = 0.6f;
     public Vector2 transformedScale;
 
@@ -14,6 +15,7 @@ public class PegBehaviour : MonoBehaviour
 
     [SerializeField] List<AudioClip> pegSounClips;
     private AudioSource pegSound;
+
 
 
     private void Start()
