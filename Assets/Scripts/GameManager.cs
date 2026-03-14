@@ -1,10 +1,6 @@
-using Microsoft.Win32.SafeHandles;
 using System;
 using TMPro;
-using Unity.VectorGraphics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject gameOverlay;
     [SerializeField] GameObject gameOverPanel;
+    [SerializeField] GameObject gameWinPanel;
 
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI totalScoreText;
@@ -22,23 +19,23 @@ public class GameManager : MonoBehaviour
     private int destroyedBallsCount;
 
     [SerializeField] PegSpawner spawner;
-    private int pegsCount;
-    private int score;
+    private int maxPegsCount;
+    private int destroyedPegsCount;
 
     private bool gamePaused = false;
     void Start()
     {
         destroyedBallsCount = 0;
 
+        DisableAllPanels();
         gameOverlay.SetActive(true);
-        gameOverPanel.SetActive(false);
 
         UpdateScoreText();
 
         gamePaused = false;
         IsGamePaused?.Invoke(false);
 
-        pegsCount = spawner.GetPegsCount();
+        maxPegsCount = spawner.GetPegsCount();
 
         shotsLeft = maxShotsCount;
         UpdateShotsText();
@@ -73,14 +70,35 @@ public class GameManager : MonoBehaviour
         shotsText.text = "Shots: " + shotsLeft + "/" + maxShotsCount;
     }
 
+    void CheckIfWin()
+    {
+        if (maxPegsCount == destroyedPegsCount)
+        {
+            GameWin();
+        }
+    }
+
+    void GameWin()
+    {
+        DisableAllPanels();
+        gameWinPanel.SetActive(true);
+    }
+
+    void DisableAllPanels()
+    {
+        gameOverlay.SetActive(false);
+        gameOverPanel.SetActive(false);
+        gameWinPanel.SetActive(false);
+    }
+
     void UpdateScoreText()
     {
-        scoreText.text = "Score: " + score + "/" + pegsCount;
+        scoreText.text = "Score: " + destroyedPegsCount + "/" + maxPegsCount;
     }
 
     void AddScore()
     {
-        ++score;
+        ++destroyedPegsCount;
         UpdateScoreText();
     }
 
@@ -101,9 +119,9 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        gameOverlay.SetActive(false);
+        DisableAllPanels();
         gameOverPanel.SetActive(true);
-        totalScoreText.text = "Total Score: " + score + "/" + pegsCount;
+        totalScoreText.text = "Total Score: " + destroyedPegsCount + "/" + maxPegsCount;
         IsGamePaused?.Invoke(true);
     }
 
@@ -112,16 +130,16 @@ public class GameManager : MonoBehaviour
         //SceneManager.LoadScene(0);
 
         // UI part
+        DisableAllPanels();
         gameOverlay.SetActive(true);
-        gameOverPanel.SetActive(false);
-        score = 0;
+        destroyedPegsCount = 0;
         UpdateScoreText();
         UpdateShotsText();
 
         // IDK part
         spawner.CreateLevel();
         IsGamePaused?.Invoke(false);
-        pegsCount = spawner.GetPegsCount();
+        maxPegsCount = spawner.GetPegsCount();
         shotsLeft = maxShotsCount;
         destroyedBallsCount = 0;
     }

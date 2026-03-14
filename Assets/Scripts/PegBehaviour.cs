@@ -14,9 +14,6 @@ public class PegBehaviour : MonoBehaviour
     private float elapsedTime = 0f;
 
     [SerializeField] List<AudioClip> pegSounClips;
-    private AudioSource pegSound;
-
-
 
     private void Start()
     {
@@ -27,6 +24,7 @@ public class PegBehaviour : MonoBehaviour
     public void ChangeSize()
     {
         isStartScaling = true;
+        gameObject.GetComponent<Collider2D>().enabled = false; // Turn off the collider to not collide second time
 
         if (pegSounClips.Count > 0)
         {
