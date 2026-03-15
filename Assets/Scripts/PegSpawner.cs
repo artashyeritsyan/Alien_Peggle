@@ -49,6 +49,21 @@ public class PegSpawner : MonoBehaviour
         }
     }
 
+    public void SetXInterval(float interval)
+    {
+        xInterval = interval;
+    }
+
+    public void SetYInterval(float interval)
+    {
+        yInterval = interval;
+    }
+
+    public void SetRandomStrength(float value)
+    {
+        randomStrength = value;
+    }
+
     public int GetPegsCount ()
     { 
         return spawnedPegs.Count;
