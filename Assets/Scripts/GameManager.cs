@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
         timeBar.fillAmount = timeRemaining / roundTime;
 
         float t = timeRemaining / roundTime;
-        timeBar.color = Color.Lerp(Color.red, new Color32(37, 113, 0, 255), t);
+        timeBar.color = Color.Lerp(Color.red, new Color32(22, 187, 121, 255), t);
     }
 
     void UpdateScoreText()
