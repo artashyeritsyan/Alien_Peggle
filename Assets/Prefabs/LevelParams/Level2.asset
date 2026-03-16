@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f3b626cdc97e44f8779f13d93aa32a, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: Assembly-CSharp::LevelParams
+  LevelBiome: 1
+  spawningPeggles:
+  - {fileID: 467998787066444958, guid: 9cb7b45445ab0f045892ecef7bca9f3a, type: 3}
+  - {fileID: 467998787066444958, guid: a72b2cb3324b86149a4cb419bbb7c0ef, type: 3}
+  pegsCount: 30
+  maxShots: 0
+  shotsForStar: 0
+  timeForStar: 35

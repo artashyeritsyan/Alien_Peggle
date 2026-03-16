@@ -29,7 +29,7 @@ public class BallSpawner : MonoBehaviour
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             pivot.rotation = Quaternion.Euler(0, 0, -Quaternion.LookRotation(pos - transform.position, Vector3.back).eulerAngles.z);
-            if (Mouse.current.leftButton.wasPressedThisFrame)
+            if (Mouse.current.leftButton.wasPressedThisFrame && gameManager.CanShoot())
             {
                 if (gameManager.GetLeftShotsCount() > 0)
                 {

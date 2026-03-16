@@ -62,12 +62,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\LevelsData\LevelParams.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\LevelsManagerScript.cs" />
+    <Compile Include="Assets\Scripts\LevelConstructor.cs" />
     <Compile Include="Assets\Scripts\PegSpawner.cs" />
     <Compile Include="Assets\Scripts\BallSpawner.cs" />
     <Compile Include="Assets\Scripts\PegBehaviour.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\DataHolder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

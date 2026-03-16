@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static event Action<bool> IsGamePaused;
 
+    // ====================== UI Part ===========================
     [Header("Game Panels")]
     [SerializeField] GameObject gameOverlay;
     [SerializeField] GameObject gameOverPanel;
@@ -24,16 +25,6 @@ public class GameManager : MonoBehaviour
     public float roundTime;  // TODO: need to get roundTIme from every round (and make private). But now gets from inspector
     private float timeRemaining;
 
-
-    [SerializeField] int maxShotsCount = 5;
-    private int shotsLeft;
-    private int destroyedBallsCount;
-
-    [SerializeField] PegSpawner spawner;
-    private int maxPegsCount;
-    private int destroyedPegsCount;
-
-
     [Header("Level Buttons Parameters")]
     [SerializeField] int levelsCount = 15;
     [SerializeField] Transform levelsLayout;
@@ -43,8 +34,26 @@ public class GameManager : MonoBehaviour
     [Header("Star Sprites")]
     [SerializeField] Sprite emptyStarSprite;
     [SerializeField] Sprite filledStarSprite;
+    // ====================== UI Part End ===========================
+
+
+    [SerializeField] int maxShotsCount = 5;
+    private int shotsLeft;
+    private int destroyedBallsCount;
+
+    [SerializeField] PegSpawner spawner;
+    private int maxPegsCount;
+    private int destroyedPegsCount;
+    private bool isBallInGame;
 
     private bool isGamePaused;
+
+    [Header("Levels Parameters")]
+    [SerializeField] List<LevelParams> levelsParams;
+
+
+    [SerializeField] AudioSource clickSound;
+
     void Start()
     {
         PauseGame(true);
@@ -59,12 +68,11 @@ public class GameManager : MonoBehaviour
         menuPanel.SetActive(true);
 
         destroyedBallsCount = 0;
+        isBallInGame = false;
         maxPegsCount = spawner.GetPegsCount();
         shotsLeft = maxShotsCount;
         UpdateScoreText();
         UpdateShotsText();
-
-
     }
 
     private void Update()
@@ -105,7 +113,7 @@ public class GameManager : MonoBehaviour
         {
             shotsLeft--;
         }
-
+        isBallInGame = true;
         UpdateShotsText();
     }
 
@@ -143,7 +151,7 @@ public class GameManager : MonoBehaviour
         timeBar.fillAmount = timeRemaining / roundTime;
 
         float t = timeRemaining / roundTime;
-        timeBar.color = Color.Lerp(Color.red, new Color32(22, 187, 121, 255), t);
+        //timeBar.color = Color.Lerp(Color.red, new Color32(22, 187, 121, 255), t);
     }
 
     void UpdateScoreText()
@@ -161,8 +169,14 @@ public class GameManager : MonoBehaviour
     void BallDestroyed ()
     {
         destroyedBallsCount++;
+        isBallInGame = false;
         //CheckIfWin();
         CheckIsGameOver();
+    }
+
+    public bool CanShoot()
+    {
+        return !isBallInGame;
     }
 
     void CheckIsGameOver()
@@ -191,6 +205,7 @@ public class GameManager : MonoBehaviour
 
         shotsLeft = maxShotsCount;
         destroyedBallsCount = 0;
+        isBallInGame = false;
 
         timeRemaining = roundTime;
 
@@ -211,6 +226,8 @@ public class GameManager : MonoBehaviour
         destroyedPegsCount = 0;
         shotsLeft = maxShotsCount;
         destroyedBallsCount = 0;
+        isBallInGame = false;
+
 
         timeRemaining = roundTime;
 
@@ -259,6 +276,7 @@ public class GameManager : MonoBehaviour
             newButton.GetComponentInChildren<TMP_Text>().text = levelIndex.ToString();
 
             newButton.GetComponent<Button>().onClick.AddListener(() => CallLevel(levelIndex));
+            newButton.GetComponent<Button>().onClick.AddListener(() => clickSound.Play());
 
             levelButtons.Add(newButton);
             //newButton.GetChildren
