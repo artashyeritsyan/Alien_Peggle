@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f3b626cdc97e44f8779f13d93aa32a, type: 3}
   m_Name: Level15
   m_EditorClassIdentifier: Assembly-CSharp::LevelParams
-  LevelBiome: 4
+  levelBiome: 4
+  levelAlien: 4
   spawningPeggles:
   - {fileID: 467998787066444958, guid: f5f65c8032b5e2f4f9338a6a83aca367, type: 3}
   - {fileID: 467998787066444958, guid: 9cb7b45445ab0f045892ecef7bca9f3a, type: 3}

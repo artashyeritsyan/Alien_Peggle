@@ -10,10 +10,20 @@ public enum Biomes
     hell
 }
 
+public enum Aliens
+{
+    green,
+    pink,
+    blue,
+    beige,
+    yellow
+}
+
 [CreateAssetMenu(fileName = "LevelParams", menuName = "Scriptable Objects/LevelParams")]
 public class LevelParams : ScriptableObject
 {
-    [SerializeField] Biomes LevelBiome;
+    [SerializeField] Biomes levelBiome;
+    [SerializeField] Aliens levelAlien;
     [SerializeField] GameObject[] spawningPeggles;
 
     [Header("Level Characteristics")]
@@ -24,7 +34,8 @@ public class LevelParams : ScriptableObject
 
 
     //public Biomes GetBiome() { return LevelBiome; }  // Dont need now
-    public int GetBiome() { return ((int)LevelBiome); }
+    public int GetBiome() { return ((int)levelBiome); }
+    public int GetAlien() { return ((int)levelAlien); }
     public int GetPegsCount() { return pegsCount; }
     public int GetMaxShots() { return maxShots; }
     public int GetShotsForStar () { return shotsForStar; }
