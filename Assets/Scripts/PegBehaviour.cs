@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -5,27 +6,123 @@ using UnityEngine;
 
 public class PegBehaviour : MonoBehaviour
 {
-
-    public float duration = 0.6f;
-    public Vector2 transformedScale;
+    [Header("Scale changing parameters")]
+    [SerializeField] float duration = 0.5f;
+    [SerializeField] Vector2 transformedScale;
 
     private Vector2 startScale;
     private bool isStartScaling;
     private float elapsedTime = 0f;
+    private bool backToNormalScale;
+
+    [Header("Health Parameters")]
+    [SerializeField] int health = 2;
 
     [SerializeField] List<AudioClip> pegSounClips;
+    [SerializeField] Color[] colors;
 
+    SpriteRenderer sr;
+    
     private void Start()
     {
         startScale = transform.localScale;
-        //pegSound = FindAnyObjectByType<AudioSource>();
+        //pegSound = FindAnyObjectByType<AudioSource>()
+        //transform.GetChild(0).GetComponent<SpriteRenderer>().color = colors[health - 1];
+
+        if (health == 1)
+        {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+        }
+        else if (health == 2)
+        {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+            gameObject.GetComponent<CircleCollider2D>().radius = 0.6f;
+        }
+    }
+
+    void SetColor()
+    {
+        transform.GetChild(0).GetComponent<SpriteRenderer>().color = colors[health - 1];
+        //sr.color = colors[health - 1];
+    }
+
+    void BreakCover()
+    {
+        transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<CircleCollider2D>().radius = 0.5f;
+    }
+
+    public void SetHealth(int health)
+    {
+        this.health = health;
+    }
+
+  
+    void Update() {
+        if (isStartScaling)
+        {
+            float t;
+
+            // Upscaling part
+            if (!backToNormalScale)
+            {
+                elapsedTime += Time.deltaTime;
+                t = Mathf.Clamp01(elapsedTime / duration);
+
+                transform.localScale = Vector3.Lerp(startScale, transformedScale, t);
+
+                if (t >= duration) backToNormalScale = true;
+
+                //Destroy(gameObject);
+            }
+            else // Downscaling part
+            {
+                elapsedTime -= Time.deltaTime;
+                t = Mathf.Clamp01(elapsedTime / duration);
+                transform.localScale = Vector3.Lerp(startScale, transformedScale, t);
+
+                if (t <= 0)
+                {
+                    backToNormalScale = false;
+                    isStartScaling = false;
+                }
+            }
+
+        }
+
     }
 
     public void ChangeSize()
     {
         isStartScaling = true;
-        gameObject.GetComponent<Collider2D>().enabled = false; // Turn off the collider to not collide second time
+    }
 
+    public void TakeDamage(int damage)
+    {
+        PlayRandomSound();
+        health -= damage;
+        BreakCover();
+        ChangeSize();
+        if (health <= 0)
+        {
+            gameObject.GetComponent<Collider2D>().enabled = false; // Turn off the collider to not collide second time
+            StartCoroutine(DestroyAfterWait(duration));
+        }
+        else
+        {
+
+            //SetColor();
+        }
+    }
+
+    IEnumerator DestroyAfterWait(float delay)
+    {
+        yield return new WaitForSeconds(delay/2);
+        Destroy(gameObject);
+    }
+
+    void PlayRandomSound()   
+    {
         if (pegSounClips.Count > 0)
         {
             int randomIndex = UnityEngine.Random.Range(0, pegSounClips.Count);
@@ -35,23 +132,4 @@ public class PegBehaviour : MonoBehaviour
             AudioManager.Play(pegSounClips[randomIndex]);
         }
     }
-
-    void Update()
-    {
-        if (isStartScaling)
-        {
-            elapsedTime += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsedTime / duration);
-
-                transform.localScale = Vector3.Lerp(startScale, transformedScale, t);
-                //transform.localScale = Vector3.Lerp(targetScale, startScale, t);
-
-            if (t >= duration)
-            {
-                Destroy(gameObject);
-            }
-        }
-       
-    }
-
 }

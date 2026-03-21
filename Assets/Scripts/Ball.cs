@@ -10,6 +10,9 @@ public class Ball : MonoBehaviour
     [SerializeField] AudioSource pegSound;
     [SerializeField] List<AudioClip> pegSounClips;
 
+    [SerializeField] int ballDamage = 1;
+   
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("death"))
@@ -20,7 +23,7 @@ public class Ball : MonoBehaviour
 
         if (collision.gameObject.CompareTag("peg"))
         {
-            collision.gameObject.GetComponent<PegBehaviour>().ChangeSize();
+            collision.gameObject.GetComponent<PegBehaviour>().TakeDamage(ballDamage);
 
             OnPointCollected?.Invoke();
 

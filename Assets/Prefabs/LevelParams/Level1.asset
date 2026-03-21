@@ -15,8 +15,7 @@ MonoBehaviour:
   LevelBiome: 0
   spawningPeggles:
   - {fileID: 467998787066444958, guid: 35544d3320079a144a15dfdbc588ba34, type: 3}
-  - {fileID: 467998787066444958, guid: 9cb7b45445ab0f045892ecef7bca9f3a, type: 3}
-  pegsCount: 24
-  maxShots: 0
-  shotsForStar: 0
+  pegsCount: 30
+  maxShots: 10
+  shotsForStar: 6
   timeForStar: 30

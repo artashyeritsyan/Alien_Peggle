@@ -1,5 +1,5 @@
 using System;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,10 +16,12 @@ public class BallSpawner : MonoBehaviour
 
     private GameManager gameManager;
 
+    [SerializeField] AudioSource shootAudioSource;
+    [SerializeField] List<AudioClip> shootSounds;
+
     private void Start()
     {
         gameManager = FindFirstObjectByType<GameManager>();
-
     }
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class BallSpawner : MonoBehaviour
             {
                 if (gameManager.GetLeftShotsCount() > 0)
                 {
+                    PlayRandomSound();
                     pos.z = 0;
                     var newBall = Instantiate(ball, shootPoint.position, Quaternion.identity);
                     newBall.GetComponent<Rigidbody2D>().AddForce((pos - transform.position).normalized * shootStrength);
@@ -46,6 +49,16 @@ public class BallSpawner : MonoBehaviour
         }
     }
 
+    void PlayRandomSound()
+    {
+        if (shootSounds.Count > 0)
+        {
+            int randomIndex = UnityEngine.Random.Range(0, shootSounds.Count);
+
+            AudioManager.Play(shootSounds[randomIndex]);
+        }
+    }
+
     private void OnEnable()
     {
         GameManager.IsGamePaused += ChangePauseMode;
@@ -55,7 +68,6 @@ public class BallSpawner : MonoBehaviour
     {
         GameManager.IsGamePaused -= ChangePauseMode;
     }
-
 
     void ChangePauseMode(bool isPaused)
     {

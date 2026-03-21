@@ -14,7 +14,7 @@ public enum Biomes
 public class LevelParams : ScriptableObject
 {
     [SerializeField] Biomes LevelBiome;
-    [SerializeField] System.Collections.Generic.List<GameObject> spawningPeggles;
+    [SerializeField] GameObject[] spawningPeggles;
 
     [Header("Level Characteristics")]
     [SerializeField] int pegsCount;
@@ -23,12 +23,14 @@ public class LevelParams : ScriptableObject
     [SerializeField] int timeForStar;
 
 
-    //public Biomes GetBiome() { return LevelBiome; }
+    //public Biomes GetBiome() { return LevelBiome; }  // Dont need now
     public int GetBiome() { return ((int)LevelBiome); }
     public int GetPegsCount() { return pegsCount; }
     public int GetMaxShots() { return maxShots; }
-    public int GetShotsForStars () { return shotsForStar; }
+    public int GetShotsForStar () { return shotsForStar; }
     public int GetTimeForStar() { return timeForStar; }
+
+    public GameObject[] GetLevelPegs() { return spawningPeggles; }
 
 
 }

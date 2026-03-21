@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 
@@ -21,9 +22,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI totalScoreText;
     [SerializeField] TextMeshProUGUI shotsText;
-    [SerializeField] Image timeBar;
-    public float roundTime;  // TODO: need to get roundTIme from every round (and make private). But now gets from inspector
-    private float timeRemaining;
+    [SerializeField] TextMeshProUGUI timeText;
+    public float maxTimeForStar;  // TODO: need to get roundTIme from every round (and make private). But now gets from inspector
+    private float currentTime;
 
     [Header("Level Buttons Parameters")]
     [SerializeField] int levelsCount = 15;
@@ -41,18 +42,24 @@ public class GameManager : MonoBehaviour
     private int shotsLeft;
     private int destroyedBallsCount;
 
+    // rewrite this part
     [SerializeField] PegSpawner spawner;
     private int maxPegsCount;
     private int destroyedPegsCount;
     private bool isBallInGame;
 
+
     private bool isGamePaused;
 
-    [Header("Levels Parameters")]
+    [Header("Levels Parameters And Construction")]
+    [SerializeField] LevelConstructor levelConstructor;
     [SerializeField] List<LevelParams> levelsParams;
+    private int currentLevelIdx;
 
+    [SerializeField] DataHolder dataHolder;
 
     [SerializeField] AudioSource clickSound;
+
 
     void Start()
     {
@@ -63,13 +70,11 @@ public class GameManager : MonoBehaviour
         CreateLevelButtons();
         //savedData = FindFirstObjectByType<DataHolder>(); 
 
-
         DisableAllPanels();
         menuPanel.SetActive(true);
 
         destroyedBallsCount = 0;
         isBallInGame = false;
-        maxPegsCount = spawner.GetPegsCount();
         shotsLeft = maxShotsCount;
         UpdateScoreText();
         UpdateShotsText();
@@ -79,15 +84,7 @@ public class GameManager : MonoBehaviour
     {
         if (!isGamePaused)
         {
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-            }
-            else
-            {
-                timeRemaining = 0;
-                GameOver();
-            }
+            currentTime += Time.deltaTime;
 
             UpdateTimerUI();
         }
@@ -130,13 +127,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void GameWin()
-    {
-        DisableAllPanels();
-        gameWinPanel.SetActive(true);
-        PauseGame(true);
-    }
-
     void DisableAllPanels()
     {
         gameOverlay.SetActive(false);
@@ -148,9 +138,12 @@ public class GameManager : MonoBehaviour
 
     void UpdateTimerUI()
     {
-        timeBar.fillAmount = timeRemaining / roundTime;
+        int minutes = Mathf.FloorToInt(currentTime / 60f);
+        int seconds = Mathf.FloorToInt(currentTime % 60f);
 
-        float t = timeRemaining / roundTime;
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        float t = currentTime / maxTimeForStar;
         //timeBar.color = Color.Lerp(Color.red, new Color32(22, 187, 121, 255), t);
     }
 
@@ -171,7 +164,7 @@ public class GameManager : MonoBehaviour
         destroyedBallsCount++;
         isBallInGame = false;
         //CheckIfWin();
-        CheckIsGameOver();
+        CheckIsGameLoose();
     }
 
     public bool CanShoot()
@@ -179,7 +172,7 @@ public class GameManager : MonoBehaviour
         return !isBallInGame;
     }
 
-    void CheckIsGameOver()
+    void CheckIsGameLoose()
     {
         if (shotsLeft <= 0 && destroyedBallsCount >= maxShotsCount)
         {
@@ -188,49 +181,67 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    void GameWin()
+    {
+        DisableAllPanels();
+        gameWinPanel.SetActive(true);
+        totalScoreText.text = "Total Score: " + destroyedPegsCount + "/" + maxPegsCount;
+
+        UpdateNewScores();
+        CheckIfStarRequired();
+
+        // TODO: Add here to set why the stars are added, 1 from this 3 (Win, Time, Shots)
+        Debug.Log("Start fo Win");
+        AddStar(currentLevelIdx);
+
+
+        PauseGame(true);
+    }
+
     void GameOver()
     {
         DisableAllPanels();
         gameOverPanel.SetActive(true);
         totalScoreText.text = "Total Score: " + destroyedPegsCount + "/" + maxPegsCount;
-        IsGamePaused?.Invoke(true);
+
+        PauseGame(true);
+    }
+
+    public void NextLevel()
+    {
+        if (currentLevelIdx == levelsParams.Count - 1)
+        {
+            return;
+        }
+        else
+        {
+            currentLevelIdx++;
+            StartGame(currentLevelIdx);
+        }
     }
 
     public void Restart()
     {
-        // IDK part
-        spawner.CreateLevel();
-        maxPegsCount = spawner.GetPegsCount();
-        destroyedPegsCount = 0;
-
-        shotsLeft = maxShotsCount;
-        destroyedBallsCount = 0;
-        isBallInGame = false;
-
-        timeRemaining = roundTime;
-
-        // UI part
-        DisableAllPanels();
-        gameOverlay.SetActive(true);
-        UpdateScoreText();
-        UpdateShotsText();
-        UpdateTimerUI();
-
-        PauseGame(false);
+        // No different logic yet
+        StartGame(currentLevelIdx);
     }
 
-    public void StartGame()
+    public void StartGame(int levelIndex)
     {
-        spawner.CreateLevel();
-        maxPegsCount = spawner.GetPegsCount();
+        ClearLevel();
+        PrepareLevel(levelIndex);
+        //spawner.CreateLevel();
+        //maxPegsCount = spawner.GetPegsCount();
         destroyedPegsCount = 0;
+
         shotsLeft = maxShotsCount;
         destroyedBallsCount = 0;
         isBallInGame = false;
 
+        currentTime = 0;
 
-        timeRemaining = roundTime;
-
+        // UI part
         DisableAllPanels();
         gameOverlay.SetActive(true);
         UpdateScoreText();
@@ -260,6 +271,8 @@ public class GameManager : MonoBehaviour
 
     public void OpenMenuPanel()
     {
+        ClearLevel();
+
         PauseGame(true);
         DisableAllPanels();
         menuPanel.SetActive(true);
@@ -297,55 +310,115 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void UpdateNewScores()
+    {
+        dataHolder.SetNewBestTime(currentLevelIdx, currentTime);
+        dataHolder.SetNewBestShot(currentLevelIdx, maxShotsCount - shotsLeft);
+    }
+
+    void CheckIfStarRequired()
+    {
+        if(currentTime <= maxTimeForStar)
+        {
+            Debug.Log("Start fo TIme");
+            AddStar(currentLevelIdx);
+        }
+
+        if (maxShotsCount - shotsLeft <= levelsParams[currentLevelIdx].GetShotsForStar())
+        {
+
+
+            Debug.Log("Start fo SHots");
+            Debug.Log(maxShotsCount + " - " + shotsLeft + " <= " + levelsParams[currentLevelIdx].GetShotsForStar());
+            AddStar(currentLevelIdx);
+        }
+    }
+
+
+    void AddStar(int level)
+    {
+        Transform stars = levelButtons[level].transform.GetChild(0).transform;
+        for (int j = 0; j < stars.childCount; ++j)
+        {
+            if(stars.GetChild(j).GetComponent<Image>().sprite == emptyStarSprite)
+            {
+                stars.GetChild(j).GetComponent<Image>().sprite = filledStarSprite;
+                return;
+            }
+        }
+    }
+
+    // This Function Can be called only from outside, And only from button!
     public void CallLevel(int level)
     {
         Debug.Log("Opening level " + level);
+        int levelIndex = level - 1;
         // TODO: Open the level...
         // TODO: Give the level number to StartGame. (Or just set it here)
-        PrepareLevel(level);
-        StartGame();
+        currentLevelIdx = levelIndex;
+        StartGame(levelIndex);
     }
 
     void PrepareLevel(int level)
     {
-        switch (level)
-        {
-            case 1:
-                maxShotsCount = 7;
-                spawner.SetXInterval(2.5f);
-                spawner.SetYInterval(2);
-                spawner.SetRandomStrength(1.5f);
-                break;
-            case 2:
-                maxShotsCount = 8;
-                spawner.SetXInterval(2.5f);
-                spawner.SetYInterval(2);
-                spawner.SetRandomStrength(1);
-                break;
-            case 3:
-                maxShotsCount = 9;
-                spawner.SetXInterval(2);
-                spawner.SetYInterval(1);
-                spawner.SetRandomStrength(1f);
-                break;
-            case 4:
-                maxShotsCount = 10;
-                spawner.SetXInterval(1.5f);
-                spawner.SetYInterval(1);
-                spawner.SetRandomStrength(1);
-                break;
-            case 5:
-                maxShotsCount = 11;
-                spawner.SetXInterval(1);
-                spawner.SetYInterval(1);
-                spawner.SetRandomStrength(0.5f);
-                break;
-            default:
-                maxShotsCount = 12;
-                spawner.SetXInterval(1);
-                spawner.SetYInterval(1);
-                spawner.SetRandomStrength(0);
-                break;
-        }
+        maxTimeForStar = levelsParams[level].GetTimeForStar();
+        maxShotsCount = levelsParams[level].GetMaxShots();
+
+        levelConstructor.ConstructLevel(levelsParams[level]);
+        maxPegsCount = levelsParams[level].GetPegsCount();
+
+
+        //switch (level)
+        //{
+        //    case 0:
+        //        //maxShotsCount = 7;
+        //        spawner.SetXInterval(2.5f);
+        //        spawner.SetYInterval(2);
+        //        spawner.SetRandomStrength(1.5f);
+        //        break;
+        //    case 1:
+        //        //maxShotsCount = 8;
+        //        spawner.SetXInterval(2.5f);
+        //        spawner.SetYInterval(2);
+        //        spawner.SetRandomStrength(1);
+        //        break;
+        //    case 2:
+        //        //maxShotsCount = 9;
+        //        spawner.SetXInterval(2);
+        //        spawner.SetYInterval(1);
+        //        spawner.SetRandomStrength(1f);
+        //        break;
+        //    case 3:
+        //        //maxShotsCount = 10;
+        //        spawner.SetXInterval(1.5f);
+        //        spawner.SetYInterval(1);
+        //        spawner.SetRandomStrength(1);
+        //        break;
+        //    case 4:
+        //        //maxShotsCount = 11;
+        //        spawner.SetXInterval(1);
+        //        spawner.SetYInterval(1);
+        //        spawner.SetRandomStrength(0.5f);
+        //        break;
+        //    default:
+        //        maxShotsCount = 12;
+        //        spawner.SetXInterval(1);
+        //        spawner.SetYInterval(1);
+        //        spawner.SetRandomStrength(0);
+        //        break;
+        //}
     }
+
+    void ClearLevel()
+    {
+        GameObject[] balls = GameObject.FindGameObjectsWithTag("ball");
+
+        foreach (GameObject ball in balls)
+        {
+            Destroy(ball);
+        }
+
+        spawner.ClearPegs();
+    }
+
 }

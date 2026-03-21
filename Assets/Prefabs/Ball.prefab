@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 9140047861088739783}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,6 +269,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4ac09a9791aff5e4685283e3dd29151d, type: 3}
   - {fileID: 8300000, guid: 0a8b3d61fe2c4334aa7bc5a0d92511c8, type: 3}
   - {fileID: 8300000, guid: a584a45445776d84191a8d94679abca2, type: 3}
+  ballDamage: 1
 --- !u!1 &7528951060199309950
 GameObject:
   m_ObjectHideFlags: 0
