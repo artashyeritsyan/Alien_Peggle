@@ -3,8 +3,26 @@ using UnityEngine;
 
 public class DataHolder : MonoBehaviour
 {
+    DataHolder instance;
+    public int currentLevel;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+        LoadPlayerProgress();
+
+    }
+
     [Header("Player Score for Levels")]
     [SerializeField] int LevelsCount = 15;
+    private int[] levelsDestroyedPegs;
     private int[] levelsBestShots;
     private float[] levelsBestTimes;
 
@@ -16,6 +34,21 @@ public class DataHolder : MonoBehaviour
     {
         levelsBestShots = new int[LevelsCount];
         levelsBestTimes = new float[LevelsCount];
+    }
+
+    public bool SetNewDestroyedPegs(int level, int newPegsCount)
+    {
+        if (newPegsCount < levelsDestroyedPegs[level])
+        {
+            levelsDestroyedPegs[level] = newPegsCount;
+            return true;
+        }
+        return false;
+    }
+
+    public int GetLevelDestroyedPegs(int level)
+    {
+        return levelsDestroyedPegs[level];
     }
 
     public bool SetNewBestTime(int level, float newTime)
@@ -46,5 +79,26 @@ public class DataHolder : MonoBehaviour
     public int GetLevelBestShot(int level) 
     { 
         return levelsBestShots[level];
+    }
+
+    public void OnLevelWon()
+    {
+        currentLevel++;
+        SavePlayerProgress();
+    }
+
+    public void LoadCurrentLevel()
+    {
+        // Load the level if needed
+    }
+
+    public void SavePlayerProgress()
+    {
+        PlayerPrefs.SetInt("level", currentLevel);
+    }
+
+    public void LoadPlayerProgress()
+    {
+        currentLevel = PlayerPrefs.GetInt("level", 0);
     }
 }

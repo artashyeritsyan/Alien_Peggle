@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.VisionOS;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,13 +8,15 @@ public class PegSpawner : MonoBehaviour
     public GameObject[] pegsPrefabs;
 
     public float randomStrength;
+    public bool createRandomLevel;
 
-    private List<GameObject> spawnedPegs;
+    //private List<GameObject> spawnedPegs;
+    public Transform pegsParent;
 
 
     void Start()
     {
-        spawnedPegs = new List<GameObject>();
+        //spawnedPegs = new List<GameObject>();
         CreateLevel();
     }
 
@@ -33,13 +34,13 @@ public class PegSpawner : MonoBehaviour
                     float offsetX = j + xInterval / 2;
                     if (offsetX > maxX) continue;
                     //Instantiate(pegs[pegIndex], new Vector2(offsetX, i), Quaternion.identity);
-                    GameObject newPeg = Instantiate(pegsPrefabs[pegIndex], new Vector2(offsetX + randomStrength * (Random.value - 0.5f), i + randomStrength * (Random.value - 0.5f)), Quaternion.identity);
-                    spawnedPegs.Add(newPeg);
+                     Instantiate(pegsPrefabs[pegIndex], new Vector2(offsetX + randomStrength * (Random.value - 0.5f), i + randomStrength * (Random.value - 0.5f)), Quaternion.identity, pegsParent);
+                    //spawnedPegs.Add(newPeg);
                 }
                 else
                 {
-                    GameObject newPeg = Instantiate(pegsPrefabs[pegIndex], new Vector2(j, i), Quaternion.identity);
-                    spawnedPegs.Add(newPeg);
+                    Instantiate(pegsPrefabs[pegIndex], new Vector2(j, i), Quaternion.identity, pegsParent);
+                    //spawnedPegs.Add(newPeg);
 
                 }
             }
@@ -48,12 +49,10 @@ public class PegSpawner : MonoBehaviour
 
     public void ClearPegs()
     {
-        if (spawnedPegs.Count > 0)
+        if (pegsParent.childCount > 0)
         {
-            for (int i = 0; i < spawnedPegs.Count; i++)
-                Destroy(spawnedPegs[i]);
-
-            spawnedPegs.Clear();
+            for (int i = 0; i < pegsParent.childCount; i++)
+                Destroy(pegsParent.GetChild(i).gameObject);
         }
     }
 
@@ -97,8 +96,8 @@ public class PegSpawner : MonoBehaviour
                     y + randomStrength * (Random.value - 0.5f)
                 );
 
-                GameObject newPeg = Instantiate(pegsPrefabs[pegIndex], pos, Quaternion.identity);
-                spawnedPegs.Add(newPeg);
+                Instantiate(pegsPrefabs[pegIndex], pos, Quaternion.identity, pegsParent);
+                //spawnedPegs.Add(newPeg);
 
                 spawned++;
             }
@@ -127,7 +126,7 @@ public class PegSpawner : MonoBehaviour
 
     public int GetPegsCount ()
     { 
-        return spawnedPegs.Count;
+        return pegsParent.childCount;
     }
 
     public void SetSpawnedPegsCount()

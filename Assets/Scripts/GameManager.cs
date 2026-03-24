@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Toolbars;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     public static event Action<bool> IsGamePaused;
 
     // ====================== UI Part ===========================
@@ -56,10 +58,30 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<LevelParams> levelsParams;
     private int currentLevelIdx;
 
+    [Header("Levels Confirming Panel")]
+    [SerializeField] GameObject levelConfirmingPanel;
+    [SerializeField] GameObject levelInfoPanel;
+    [SerializeField] TextMeshProUGUI levelNumberText;
+    [SerializeField] TextMeshProUGUI pegsCountInfoText;
+    [SerializeField] TextMeshProUGUI timeInfoText;
+    [SerializeField] TextMeshProUGUI shotsInfoText;
+    [SerializeField] Button levelStartButton;
+
     [SerializeField] DataHolder dataHolder;
 
     [SerializeField] AudioSource clickSound;
 
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+
+    }
 
     void Start()
     {
@@ -134,6 +156,7 @@ public class GameManager : MonoBehaviour
         gameWinPanel.SetActive(false);
         menuPanel.SetActive(false);
         levelsPanel.SetActive(false);
+        levelConfirmingPanel.SetActive(false);
     }
 
     void UpdateTimerUI()
@@ -180,7 +203,6 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
     }
-
 
     void GameWin()
     {
@@ -282,13 +304,13 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < levelsCount; ++i)
         {
-            int levelIndex = i+1;
+            int levelNumber = i+1;
 
             GameObject newButton = Instantiate(levelButtonPrefab, levelsLayout);
-            newButton.name = "Level_" + levelIndex.ToString();
-            newButton.GetComponentInChildren<TMP_Text>().text = levelIndex.ToString();
+            newButton.name = "Level_" + levelNumber.ToString();
+            newButton.GetComponentInChildren<TMP_Text>().text = levelNumber.ToString();
 
-            newButton.GetComponent<Button>().onClick.AddListener(() => CallLevel(levelIndex));
+            newButton.GetComponent<Button>().onClick.AddListener(() => SetChoosenLevelIdx(i));
             newButton.GetComponent<Button>().onClick.AddListener(() => clickSound.Play());
 
             levelButtons.Add(newButton);
@@ -334,7 +356,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     void AddStar(int level)
     {
         Transform stars = levelButtons[level].transform.GetChild(0).transform;
@@ -349,14 +370,33 @@ public class GameManager : MonoBehaviour
     }
 
     // This Function Can be called only from outside, And only from button!
+
+    void OpenLevelConfirmingPanel(int level)
+    {
+        levelConfirmingPanel.SetActive(true);
+        levelNumberText.text = "Level" + (level + 1).ToString();
+        levelStartButton.GetComponent<Button>().onClick.AddListener(() => CallLevel(level));
+
+        pegsCountInfoText.text = dataHolder.GetLevelDestroyedPegs(level).ToString() + "/" + levelsParams[level].GetLevelPegs().ToString();
+        timeInfoText.text = dataHolder.GetLevelBestTime(level).ToString();
+        shotsInfoText.text = dataHolder.GetLevelBestShot(level).ToString();
+        // TODO: Add here the Time and Shots that needed for Star
+    }
+
+    public void SetChoosenLevelIdx(int level)
+    {
+        Debug.Log("Choosing level " + level);
+        currentLevelIdx = level;
+
+        OpenLevelConfirmingPanel(level);
+    }
+
     public void CallLevel(int level)
     {
         Debug.Log("Opening level " + level);
-        int levelIndex = level - 1;
-        // TODO: Open the level...
-        // TODO: Give the level number to StartGame. (Or just set it here)
-        currentLevelIdx = levelIndex;
-        StartGame(levelIndex);
+        //int levelIndex = level;
+        //currentLevelIdx = levelIndex;
+        StartGame(level);
     }
 
     void PrepareLevel(int level)
@@ -366,47 +406,6 @@ public class GameManager : MonoBehaviour
 
         levelConstructor.ConstructLevel(levelsParams[level]);
         maxPegsCount = levelsParams[level].GetPegsCount();
-
-
-        //switch (level)
-        //{
-        //    case 0:
-        //        //maxShotsCount = 7;
-        //        spawner.SetXInterval(2.5f);
-        //        spawner.SetYInterval(2);
-        //        spawner.SetRandomStrength(1.5f);
-        //        break;
-        //    case 1:
-        //        //maxShotsCount = 8;
-        //        spawner.SetXInterval(2.5f);
-        //        spawner.SetYInterval(2);
-        //        spawner.SetRandomStrength(1);
-        //        break;
-        //    case 2:
-        //        //maxShotsCount = 9;
-        //        spawner.SetXInterval(2);
-        //        spawner.SetYInterval(1);
-        //        spawner.SetRandomStrength(1f);
-        //        break;
-        //    case 3:
-        //        //maxShotsCount = 10;
-        //        spawner.SetXInterval(1.5f);
-        //        spawner.SetYInterval(1);
-        //        spawner.SetRandomStrength(1);
-        //        break;
-        //    case 4:
-        //        //maxShotsCount = 11;
-        //        spawner.SetXInterval(1);
-        //        spawner.SetYInterval(1);
-        //        spawner.SetRandomStrength(0.5f);
-        //        break;
-        //    default:
-        //        maxShotsCount = 12;
-        //        spawner.SetXInterval(1);
-        //        spawner.SetYInterval(1);
-        //        spawner.SetRandomStrength(0);
-        //        break;
-        //}
     }
 
     void ClearLevel()

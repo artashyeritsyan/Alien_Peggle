@@ -14,15 +14,9 @@ public class BallSpawner : MonoBehaviour
 
     private bool gamePaused = false;
 
-    private GameManager gameManager;
-
     [SerializeField] AudioSource shootAudioSource;
     [SerializeField] List<AudioClip> shootSounds;
 
-    private void Start()
-    {
-        gameManager = FindFirstObjectByType<GameManager>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -31,9 +25,9 @@ public class BallSpawner : MonoBehaviour
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             pivot.rotation = Quaternion.Euler(0, 0, -Quaternion.LookRotation(pos - transform.position, Vector3.back).eulerAngles.z);
-            if (Mouse.current.leftButton.wasPressedThisFrame && gameManager.CanShoot())
+            if (Mouse.current.leftButton.wasPressedThisFrame && GameManager.instance.CanShoot())
             {
-                if (gameManager.GetLeftShotsCount() > 0)
+                if (GameManager.instance.GetLeftShotsCount() > 0)
                 {
                     PlayRandomSound();
                     pos.z = 0;
