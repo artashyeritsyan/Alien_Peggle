@@ -6,6 +6,12 @@ public class DataHolder : MonoBehaviour
     DataHolder instance;
     public int currentLevel;
 
+    [Header("Player Score for Levels")]
+    [SerializeField] int LevelsCount = 15;
+    private int[] levelsDestroyedPegs;
+    private int[] levelsBestShots;
+    private float[] levelsBestTimes;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -14,17 +20,23 @@ public class DataHolder : MonoBehaviour
             return;
         }
 
+        levelsBestShots = new int[LevelsCount];
+        levelsBestTimes = new float[LevelsCount];
+        levelsDestroyedPegs = new int[LevelsCount];
+
+        for (int i = 0; i < LevelsCount; ++i)
+        {
+            levelsBestShots[i] = 0;
+            levelsBestTimes[i] = 0;
+            levelsDestroyedPegs[i] = 0;
+        }
+
         instance = this;
         DontDestroyOnLoad(gameObject);
-        LoadPlayerProgress();
+        //LoadPlayerProgress();
 
     }
 
-    [Header("Player Score for Levels")]
-    [SerializeField] int LevelsCount = 15;
-    private int[] levelsDestroyedPegs;
-    private int[] levelsBestShots;
-    private float[] levelsBestTimes;
 
     public string Data { get; private set; }
 
@@ -32,8 +44,7 @@ public class DataHolder : MonoBehaviour
     // and save it as well
     private void Start()
     {
-        levelsBestShots = new int[LevelsCount];
-        levelsBestTimes = new float[LevelsCount];
+
     }
 
     public bool SetNewDestroyedPegs(int level, int newPegsCount)
@@ -48,6 +59,7 @@ public class DataHolder : MonoBehaviour
 
     public int GetLevelDestroyedPegs(int level)
     {
+        Debug.Log("PegsDestrpyed: " + levelsDestroyedPegs[level]);
         return levelsDestroyedPegs[level];
     }
 

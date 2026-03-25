@@ -304,13 +304,13 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < levelsCount; ++i)
         {
-            int levelNumber = i+1;
+            int levelNumber = i;
 
             GameObject newButton = Instantiate(levelButtonPrefab, levelsLayout);
-            newButton.name = "Level_" + levelNumber.ToString();
-            newButton.GetComponentInChildren<TMP_Text>().text = levelNumber.ToString();
+            newButton.name = "Level_" + (levelNumber + 1).ToString();
+            newButton.GetComponentInChildren<TMP_Text>().text = (levelNumber + 1).ToString();
 
-            newButton.GetComponent<Button>().onClick.AddListener(() => SetChoosenLevelIdx(i));
+            newButton.GetComponent<Button>().onClick.AddListener(() => SetChoosenLevelIdx(levelNumber));
             newButton.GetComponent<Button>().onClick.AddListener(() => clickSound.Play());
 
             levelButtons.Add(newButton);
@@ -377,9 +377,10 @@ public class GameManager : MonoBehaviour
         levelNumberText.text = "Level" + (level + 1).ToString();
         levelStartButton.GetComponent<Button>().onClick.AddListener(() => CallLevel(level));
 
-        pegsCountInfoText.text = dataHolder.GetLevelDestroyedPegs(level).ToString() + "/" + levelsParams[level].GetLevelPegs().ToString();
-        timeInfoText.text = dataHolder.GetLevelBestTime(level).ToString();
-        shotsInfoText.text = dataHolder.GetLevelBestShot(level).ToString();
+
+        pegsCountInfoText.text = dataHolder.GetLevelDestroyedPegs(level).ToString() + "/" + levelsParams[level].GetPegsCount().ToString();
+        timeInfoText.text = "Best Time:" + dataHolder.GetLevelBestTime(level).ToString();
+        shotsInfoText.text = "Best Shots" + dataHolder.GetLevelBestShot(level).ToString();
         // TODO: Add here the Time and Shots that needed for Star
     }
 
