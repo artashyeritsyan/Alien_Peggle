@@ -8,6 +8,7 @@ public class DataHolder : MonoBehaviour
 
     [Header("Player Score for Levels")]
     [SerializeField] int LevelsCount = 15;
+    private bool[] isLevelCompleted;
     private int[] levelsDestroyedPegs;
     private int[] levelsBestShots;
     private float[] levelsBestTimes;
@@ -20,16 +21,18 @@ public class DataHolder : MonoBehaviour
             return;
         }
 
+        isLevelCompleted = new bool[LevelsCount];
         levelsBestShots = new int[LevelsCount];
         levelsBestTimes = new float[LevelsCount];
         levelsDestroyedPegs = new int[LevelsCount];
 
-        for (int i = 0; i < LevelsCount; ++i)
-        {
-            levelsBestShots[i] = 0;
-            levelsBestTimes[i] = 0;
-            levelsDestroyedPegs[i] = 0;
-        }
+        //for (int i = 0; i < LevelsCount; ++i)
+        //{
+        //    isLevelCompleted[i] = false;
+        //    levelsBestShots[i] = -1;
+        //    levelsBestTimes[i] = -1;
+        //    levelsDestroyedPegs[i] = -1;
+        //}
 
         instance = this;
         DontDestroyOnLoad(gameObject);
@@ -44,7 +47,17 @@ public class DataHolder : MonoBehaviour
     // and save it as well
     private void Start()
     {
+        //PlayerPrefs.DeleteAll(); // To remove saves
+    }
 
+    public void SetLevelCompleted(int level)
+    {
+        isLevelCompleted[level] = true;
+    }
+
+    public bool GetIsLevelCompleted(int level)
+    {
+        return isLevelCompleted[level];
     }
 
     public bool SetNewDestroyedPegs(int level, int newPegsCount)
@@ -106,11 +119,22 @@ public class DataHolder : MonoBehaviour
 
     public void SavePlayerProgress()
     {
-        PlayerPrefs.SetInt("level", currentLevel);
+        Debug.Log("Saving levelsCount: " + currentLevel);
+        PlayerPrefs.SetInt("levelsCount", LevelsCount);
+        Debug.Log("Saving 1LevelTime: " + levelsBestTimes[0]);
+        PlayerPrefs.SetFloat("1LevelTime", levelsBestTimes[0]);
+        Debug.Log("Saving 1LevelShots: " + levelsBestShots[0]);
+        PlayerPrefs.SetInt("1LevelShots", levelsBestShots[0]);
+        //levelsBestTimes
+        //Application.persistentDataPath    DATA SAVING PATH IN EVERY DEVICE
+        // TODO: Make it save into Json file and save here
     }
 
     public void LoadPlayerProgress()
     {
-        currentLevel = PlayerPrefs.GetInt("level", 0);
+        currentLevel = PlayerPrefs.GetInt("levelsCount", 0);
+        levelsBestTimes[0] = PlayerPrefs.GetFloat("1LevelTime", -1);
+        levelsBestShots[0] = PlayerPrefs.GetInt("1LevelShots", -1);
+
     }
 }

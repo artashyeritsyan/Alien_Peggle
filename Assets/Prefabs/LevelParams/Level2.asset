@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f3b626cdc97e44f8779f13d93aa32a, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: Assembly-CSharp::LevelParams
-  LevelBiome: 0
+  levelBiome: 0
+  levelAlien: 0
   spawningPeggles:
-  - {fileID: 467998787066444958, guid: 35544d3320079a144a15dfdbc588ba34, type: 3}
+  - {fileID: 467998787066444958, guid: 3a9bf33828381844ab9e1a52192f59b0, type: 3}
   pegsCount: 35
   maxShots: 11
   shotsForStar: 7

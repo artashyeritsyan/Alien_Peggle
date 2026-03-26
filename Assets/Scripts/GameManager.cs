@@ -90,6 +90,8 @@ public class GameManager : MonoBehaviour
         levelButtons = new List<GameObject>();
         // TODO: Create DataHolder script to save all info about levels
         CreateLevelButtons();
+        dataHolder.LoadPlayerProgress();
+        UpdateLevelsStars();
         //savedData = FindFirstObjectByType<DataHolder>(); 
 
         DisableAllPanels();
@@ -166,7 +168,7 @@ public class GameManager : MonoBehaviour
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-        float t = currentTime / maxTimeForStar;
+        //float time = currentTime / maxTimeForStar;
         //timeBar.color = Color.Lerp(Color.red, new Color32(22, 187, 121, 255), t);
     }
 
@@ -211,13 +213,11 @@ public class GameManager : MonoBehaviour
         totalScoreText.text = "Total Score: " + destroyedPegsCount + "/" + maxPegsCount;
 
         UpdateNewScores();
-        CheckIfStarRequired();
+        AddStar(currentLevelIdx, 0);
+        CheckIfStarRequired(currentLevelIdx);
+        dataHolder.SavePlayerProgress();
 
-        // TODO: Add here to set why the stars are added, 1 from this 3 (Win, Time, Shots)
         Debug.Log("Start fo Win");
-        AddStar(currentLevelIdx);
-
-
         PauseGame(true);
     }
 
@@ -226,6 +226,8 @@ public class GameManager : MonoBehaviour
         DisableAllPanels();
         gameOverPanel.SetActive(true);
         totalScoreText.text = "Total Score: " + destroyedPegsCount + "/" + maxPegsCount;
+
+        //dataHolder.SavePlayerProgress();
 
         PauseGame(true);
     }
@@ -287,6 +289,10 @@ public class GameManager : MonoBehaviour
 
     public void OpenLevelsPanel()
     {
+        //dataHolder.SavePlayerProgress();
+        //dataHolder.LoadPlayerProgress();
+        //UpdateLevelsStars();
+
         DisableAllPanels();
         levelsPanel.SetActive(true);
     }
@@ -297,7 +303,9 @@ public class GameManager : MonoBehaviour
 
         PauseGame(true);
         DisableAllPanels();
+        dataHolder.SavePlayerProgress();
         menuPanel.SetActive(true);
+
     }
 
     public void CreateLevelButtons()
@@ -334,38 +342,65 @@ public class GameManager : MonoBehaviour
 
     void UpdateNewScores()
     {
+        Debug.Log("Current Level" + currentLevelIdx);
+        dataHolder.SetLevelCompleted(currentLevelIdx);
         dataHolder.SetNewBestTime(currentLevelIdx, currentTime);
         dataHolder.SetNewBestShot(currentLevelIdx, maxShotsCount - shotsLeft);
     }
 
-    void CheckIfStarRequired()
+    void UpdateLevelsStars()
     {
-        if(currentTime <= maxTimeForStar)
-        {
-            Debug.Log("Start fo TIme");
-            AddStar(currentLevelIdx);
-        }
-
-        if (maxShotsCount - shotsLeft <= levelsParams[currentLevelIdx].GetShotsForStar())
+        for (int i = 0; i < levelButtons.Count; ++i)
         {
 
+            if (dataHolder.GetIsLevelCompleted(i))
+            {
+                AddStar(i, 0);
+            }
 
-            Debug.Log("Start fo SHots");
-            Debug.Log(maxShotsCount + " - " + shotsLeft + " <= " + levelsParams[currentLevelIdx].GetShotsForStar());
-            AddStar(currentLevelIdx);
+            if (dataHolder.GetLevelBestTime(i) > 0 && dataHolder.GetLevelBestTime(i) <= levelsParams[i].GetTimeForStar())
+            {
+                Debug.Log("Start fo Time");
+                // 1 stands for StarForTime
+                AddStar(i, 1);
+            }
+
+            if (dataHolder.GetLevelBestShot(i) > 0 &&  dataHolder.GetLevelBestShot(i) <= levelsParams[i].GetShotsForStar())
+            {
+                Debug.Log("Start fo SHots");
+                // 2 stands for StarForShot
+                AddStar(i, 2);
+            }
         }
     }
 
-    void AddStar(int level)
+    void CheckIfStarRequired(int level)
     {
-        Transform stars = levelButtons[level].transform.GetChild(0).transform;
-        for (int j = 0; j < stars.childCount; ++j)
+        if(dataHolder.GetLevelBestTime(level) <= levelsParams[level].GetTimeForStar())
         {
-            if(stars.GetChild(j).GetComponent<Image>().sprite == emptyStarSprite)
-            {
-                stars.GetChild(j).GetComponent<Image>().sprite = filledStarSprite;
-                return;
-            }
+            Debug.Log("Start fo TIme");
+            // 1 stands for StarForTime
+            AddStar(level, 1);
+        }
+
+        if (maxShotsCount - shotsLeft <= levelsParams[level].GetShotsForStar())
+        {
+            Debug.Log("Start fo SHots");
+            Debug.Log(maxShotsCount + " - " + shotsLeft + " <= " + levelsParams[level].GetShotsForStar());
+            // 2 stands for StarForShot
+            AddStar(level, 2);
+        }
+    }
+
+    // Adding star to level, and second int for choosing is it for Win for Time or Shots
+    void AddStar(int level, int starIdx)
+    {
+        if (starIdx > 3) return;
+        Transform stars = levelButtons[level].transform.GetChild(0).transform;
+
+        if (stars.GetChild(starIdx).GetComponent<Image>().sprite == emptyStarSprite)
+        {
+            stars.GetChild(starIdx).GetComponent<Image>().sprite = filledStarSprite;
         }
     }
 
@@ -378,7 +413,7 @@ public class GameManager : MonoBehaviour
         levelStartButton.GetComponent<Button>().onClick.AddListener(() => CallLevel(level));
 
 
-        pegsCountInfoText.text = dataHolder.GetLevelDestroyedPegs(level).ToString() + "/" + levelsParams[level].GetPegsCount().ToString();
+        pegsCountInfoText.text = "Pegs: " + dataHolder.GetLevelDestroyedPegs(level).ToString() + "/" + levelsParams[level].GetPegsCount().ToString();
         timeInfoText.text = "Best Time:" + dataHolder.GetLevelBestTime(level).ToString();
         shotsInfoText.text = "Best Shots" + dataHolder.GetLevelBestShot(level).ToString();
         // TODO: Add here the Time and Shots that needed for Star
@@ -419,6 +454,22 @@ public class GameManager : MonoBehaviour
         }
 
         spawner.ClearPegs();
+    }
+
+    public void ResetStars()
+    {
+        for (int i = 0; i < levelButtons.Count; i++)
+        {
+
+            Transform stars = levelButtons[i].transform.GetChild(0).transform;
+            for (int j = 0; j < stars.childCount; ++j)
+            {
+                if (stars.GetChild(j).GetComponent<Image>().sprite == filledStarSprite)
+                {
+                    stars.GetChild(j).GetComponent<Image>().sprite = emptyStarSprite;
+                }
+            }
+        }
     }
 
 }
