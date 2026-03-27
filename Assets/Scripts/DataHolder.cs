@@ -78,7 +78,7 @@ public class DataHolder : MonoBehaviour
 
     public bool SetNewBestTime(int level, float newTime)
     {
-        if (newTime < levelsBestTimes[level])
+        if (newTime < levelsBestTimes[level] || levelsBestTimes[level] == -1)
         {
             levelsBestTimes[level] = newTime;
             return true;
@@ -93,7 +93,7 @@ public class DataHolder : MonoBehaviour
 
     public bool SetNewBestShot(int level, int newShotsCount)
     {
-        if (newShotsCount < levelsBestShots[level])
+        if (newShotsCount < levelsBestShots[level] || levelsBestShots[level] == -1)
         {
             levelsBestShots[level] = newShotsCount;
             return true;    
@@ -119,12 +119,16 @@ public class DataHolder : MonoBehaviour
 
     public void SavePlayerProgress()
     {
+
         Debug.Log("Saving levelsCount: " + currentLevel);
         PlayerPrefs.SetInt("levelsCount", LevelsCount);
         Debug.Log("Saving 1LevelTime: " + levelsBestTimes[0]);
         PlayerPrefs.SetFloat("1LevelTime", levelsBestTimes[0]);
         Debug.Log("Saving 1LevelShots: " + levelsBestShots[0]);
         PlayerPrefs.SetInt("1LevelShots", levelsBestShots[0]);
+        if (isLevelCompleted[0]) PlayerPrefs.SetInt("1LevelCompleted", 1);
+        else PlayerPrefs.SetInt("1LevelCompleted", 0);
+
         //levelsBestTimes
         //Application.persistentDataPath    DATA SAVING PATH IN EVERY DEVICE
         // TODO: Make it save into Json file and save here
@@ -132,6 +136,7 @@ public class DataHolder : MonoBehaviour
 
     public void LoadPlayerProgress()
     {
+        isLevelCompleted[0] = PlayerPrefs.GetInt("1LevelCompleted", 0) == 1;
         currentLevel = PlayerPrefs.GetInt("levelsCount", 0);
         levelsBestTimes[0] = PlayerPrefs.GetFloat("1LevelTime", -1);
         levelsBestShots[0] = PlayerPrefs.GetInt("1LevelShots", -1);

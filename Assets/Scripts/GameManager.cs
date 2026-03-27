@@ -213,7 +213,6 @@ public class GameManager : MonoBehaviour
         totalScoreText.text = "Total Score: " + destroyedPegsCount + "/" + maxPegsCount;
 
         UpdateNewScores();
-        AddStar(currentLevelIdx, 0);
         CheckIfStarRequired(currentLevelIdx);
         dataHolder.SavePlayerProgress();
 
@@ -376,7 +375,13 @@ public class GameManager : MonoBehaviour
 
     void CheckIfStarRequired(int level)
     {
-        if(dataHolder.GetLevelBestTime(level) <= levelsParams[level].GetTimeForStar())
+        if (dataHolder.GetIsLevelCompleted(level))
+        {
+            AddStar(currentLevelIdx, 0);
+        }
+
+
+        if (dataHolder.GetLevelBestTime(level) <= levelsParams[level].GetTimeForStar())
         {
             Debug.Log("Start fo TIme");
             // 1 stands for StarForTime
