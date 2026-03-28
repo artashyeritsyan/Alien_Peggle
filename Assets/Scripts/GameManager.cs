@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI timeInfoText;
     [SerializeField] TextMeshProUGUI shotsInfoText;
     [SerializeField] Button levelStartButton;
+    [SerializeField] GameObject levelInfoStars;
 
     [SerializeField] DataHolder dataHolder;
 
@@ -226,6 +227,10 @@ public class GameManager : MonoBehaviour
         gameOverPanel.SetActive(true);
         totalScoreText.text = "Total Score: " + destroyedPegsCount + "/" + maxPegsCount;
 
+        // Just updating the destroyed counts
+        dataHolder.SetNewDestroyedPegs(currentLevelIdx, destroyedPegsCount);
+        dataHolder.SavePlayerProgress();
+
         //dataHolder.SavePlayerProgress();
 
         PauseGame(true);
@@ -302,6 +307,7 @@ public class GameManager : MonoBehaviour
 
         PauseGame(true);
         DisableAllPanels();
+
         dataHolder.SavePlayerProgress();
         menuPanel.SetActive(true);
 
@@ -343,6 +349,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Current Level" + currentLevelIdx);
         dataHolder.SetLevelCompleted(currentLevelIdx);
+        dataHolder.SetNewDestroyedPegs(currentLevelIdx, destroyedPegsCount);
         dataHolder.SetNewBestTime(currentLevelIdx, currentTime);
         dataHolder.SetNewBestShot(currentLevelIdx, maxShotsCount - shotsLeft);
     }
@@ -407,6 +414,8 @@ public class GameManager : MonoBehaviour
         {
             stars.GetChild(starIdx).GetComponent<Image>().sprite = filledStarSprite;
         }
+
+
     }
 
     // This Function Can be called only from outside, And only from button!
@@ -418,10 +427,15 @@ public class GameManager : MonoBehaviour
         levelStartButton.GetComponent<Button>().onClick.AddListener(() => CallLevel(level));
 
 
-        pegsCountInfoText.text = "Pegs: " + dataHolder.GetLevelDestroyedPegs(level).ToString() + "/" + levelsParams[level].GetPegsCount().ToString();
-        timeInfoText.text = "Best Time:" + dataHolder.GetLevelBestTime(level).ToString();
-        shotsInfoText.text = "Best Shots" + dataHolder.GetLevelBestShot(level).ToString();
-        // TODO: Add here the Time and Shots that needed for Star
+        pegsCountInfoText.text = "Pegs: " + (dataHolder.GetLevelDestroyedPegs(level) < 0 ? 0 : dataHolder.GetLevelDestroyedPegs(level)).ToString()
+            + "/" + levelsParams[level].GetPegsCount().ToString();
+        timeInfoText.text = "Best Time:" + ((int)(dataHolder.GetLevelBestTime(level) < 0 ? 0 : dataHolder.GetLevelBestTime(level))).ToString();
+        shotsInfoText.text = "Best Shots" + (dataHolder.GetLevelBestShot(level) < 0 ? 0 : dataHolder.GetLevelBestShot(level)).ToString();
+        // TODO: Refactor this logic later
+        Transform stars = levelButtons[level].transform.GetChild(0).transform;
+        levelInfoStars.transform.GetChild(0).GetComponent<Image>().sprite = stars.GetChild(0).GetComponent<Image>().sprite;
+        levelInfoStars.transform.GetChild(1).GetComponent<Image>().sprite = stars.GetChild(1).GetComponent<Image>().sprite;
+        levelInfoStars.transform.GetChild(2).GetComponent<Image>().sprite = stars.GetChild(2).GetComponent<Image>().sprite;
     }
 
     public void SetChoosenLevelIdx(int level)

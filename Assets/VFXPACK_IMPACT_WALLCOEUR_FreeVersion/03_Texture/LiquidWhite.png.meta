@@ -1,0 +1,1092 @@
+fileFormatVersion: 2
+guid: c9bc70c9ef169f84dbbc9ed5ac5ea551
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -789656756769610498
+    second: LiquidWhite_0
+  - first:
+      213: 3748760328075697744
+    second: LiquidWhite_1
+  - first:
+      213: 7668834010613957019
+    second: LiquidWhite_2
+  - first:
+      213: -6146041207215336725
+    second: LiquidWhite_3
+  - first:
+      213: -6756564329647204123
+    second: LiquidWhite_4
+  - first:
+      213: 2753319540972670572
+    second: LiquidWhite_5
+  - first:
+      213: -726583161210464535
+    second: LiquidWhite_6
+  - first:
+      213: 5485419300695525253
+    second: LiquidWhite_7
+  - first:
+      213: 6497545588326964080
+    second: LiquidWhite_8
+  - first:
+      213: 4491525687273338436
+    second: LiquidWhite_9
+  - first:
+      213: 2086420945922426552
+    second: LiquidWhite_10
+  - first:
+      213: -7261491115792819208
+    second: LiquidWhite_11
+  - first:
+      213: -6626300753005010598
+    second: LiquidWhite_12
+  - first:
+      213: -4347424636904326650
+    second: LiquidWhite_13
+  - first:
+      213: -8773339596325303683
+    second: LiquidWhite_14
+  - first:
+      213: 4293600980757255670
+    second: LiquidWhite_15
+  - first:
+      213: -6547991463562032468
+    second: LiquidWhite_16
+  - first:
+      213: 6298898872222651258
+    second: LiquidWhite_17
+  - first:
+      213: 6164913338753910190
+    second: LiquidWhite_18
+  - first:
+      213: -7709473459347943366
+    second: LiquidWhite_19
+  - first:
+      213: 5671392185320462268
+    second: LiquidWhite_20
+  - first:
+      213: -3693257956788617142
+    second: LiquidWhite_21
+  - first:
+      213: -1356617802538750128
+    second: LiquidWhite_22
+  - first:
+      213: -2649799242547577922
+    second: LiquidWhite_23
+  - first:
+      213: 6243237652357954134
+    second: LiquidWhite_24
+  - first:
+      213: -3894114254570374851
+    second: LiquidWhite_25
+  - first:
+      213: 7805619250690959027
+    second: LiquidWhite_26
+  - first:
+      213: 8328561349825889820
+    second: LiquidWhite_27
+  - first:
+      213: 7011487327614938515
+    second: LiquidWhite_28
+  - first:
+      213: -4668943614030956706
+    second: LiquidWhite_29
+  - first:
+      213: 2912841404959529175
+    second: LiquidWhite_30
+  - first:
+      213: -3305174376936117995
+    second: LiquidWhite_31
+  - first:
+      213: -5456750760095978620
+    second: LiquidWhite_32
+  - first:
+      213: 2283509035700131799
+    second: LiquidWhite_33
+  - first:
+      213: 4274544758299634121
+    second: LiquidWhite_34
+  - first:
+      213: -7060316714585056325
+    second: LiquidWhite_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LiquidWhite_0
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1188
+        width: 206
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef4a24e0d539a05f0800000000000000
+      internalID: -789656756769610498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_1
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1170
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e570718a5460430800000000000000
+      internalID: 3748760328075697744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_2
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1119
+        width: 333
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b914414c6eb2d6a60800000000000000
+      internalID: 7668834010613957019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_3
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1082
+        width: 376
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be2540dc510e4baa0800000000000000
+      internalID: -6146041207215336725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_4
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 543
+        width: 407
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e89d4d3a8cdb32a0800000000000000
+      internalID: -6756564329647204123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_5
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 543
+        width: 276
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6e41d8e881c53620800000000000000
+      internalID: 2753319540972670572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_6
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 852
+        width: 58
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e61548e678aae5f0800000000000000
+      internalID: -726583161210464535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_7
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 863
+        width: 149
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 587470e7acf102c40800000000000000
+      internalID: 5485419300695525253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_8
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 826
+        width: 32
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b9220894beb2a50800000000000000
+      internalID: 6497545588326964080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_9
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 858
+        width: 53
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4463871c0da155e30800000000000000
+      internalID: 4491525687273338436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_10
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 720
+        width: 150
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b604a5cbc474fc10800000000000000
+      internalID: 2086420945922426552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_11
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 720
+        width: 131
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fb938f9d400a3b90800000000000000
+      internalID: -7261491115792819208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_12
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 717
+        width: 41
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a51ab32a296aa04a0800000000000000
+      internalID: -6626300753005010598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_13
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 725
+        width: 117
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60a398d8358daa3c0800000000000000
+      internalID: -4347424636904326650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_14
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 535
+        width: 212
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7a492bce16de3680800000000000000
+      internalID: -8773339596325303683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_15
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 352
+        width: 152
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f51e41f75fe59b30800000000000000
+      internalID: 4293600980757255670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_16
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 350
+        width: 151
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa4816e47cd025a0800000000000000
+      internalID: -6547991463562032468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_17
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 488
+        width: 29
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7390fab62f2a6750800000000000000
+      internalID: 6298898872222651258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_18
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 443
+        width: 57
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea58e7bb40c2e8550800000000000000
+      internalID: 6164913338753910190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_19
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 349
+        width: 20
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a30934a3cb2720590800000000000000
+      internalID: -7709473459347943366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_20
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 366
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb7d3fbe425d4be40800000000000000
+      internalID: 5671392185320462268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_21
+      rect:
+        serializedVersion: 2
+        x: 1373
+        y: 365
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a40cabdb479eebcc0800000000000000
+      internalID: -3693257956788617142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_22
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 212
+        width: 119
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05fe4b7db435c2de0800000000000000
+      internalID: -1356617802538750128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_23
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 212
+        width: 101
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebb3addc0a50a3bd0800000000000000
+      internalID: -2649799242547577922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_24
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 332
+        width: 20
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65ab325119f64a650800000000000000
+      internalID: 6243237652357954134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_25
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 207
+        width: 81
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d393c85a7b355f9c0800000000000000
+      internalID: -3894114254570374851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_26
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 205
+        width: 53
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b6a2614a51235c60800000000000000
+      internalID: 7805619250690959027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_27
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 175
+        width: 71
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c168b6acb6ef49370800000000000000
+      internalID: 8328561349825889820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_28
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 228
+        width: 15
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39d24a5739ecd4160800000000000000
+      internalID: 7011487327614938515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_29
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 120
+        width: 75
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e573b592584943fb0800000000000000
+      internalID: -4668943614030956706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_30
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 140
+        width: 22
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d899ad23dd7c6820800000000000000
+      internalID: 2912841404959529175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_31
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 18
+        width: 105
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 519effd6a69a122d0800000000000000
+      internalID: -3305174376936117995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_32
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 117
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48be2a4481ab544b0800000000000000
+      internalID: -5456750760095978620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_33
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 17
+        width: 99
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d71d429e57a0bf10800000000000000
+      internalID: 2283509035700131799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_34
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 19
+        width: 69
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c925f66fcb325b30800000000000000
+      internalID: 4274544758299634121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LiquidWhite_35
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 45
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb9761fa57b40e90800000000000000
+      internalID: -7060316714585056325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LiquidWhite_0: -789656756769610498
+      LiquidWhite_1: 3748760328075697744
+      LiquidWhite_10: 2086420945922426552
+      LiquidWhite_11: -7261491115792819208
+      LiquidWhite_12: -6626300753005010598
+      LiquidWhite_13: -4347424636904326650
+      LiquidWhite_14: -8773339596325303683
+      LiquidWhite_15: 4293600980757255670
+      LiquidWhite_16: -6547991463562032468
+      LiquidWhite_17: 6298898872222651258
+      LiquidWhite_18: 6164913338753910190
+      LiquidWhite_19: -7709473459347943366
+      LiquidWhite_2: 7668834010613957019
+      LiquidWhite_20: 5671392185320462268
+      LiquidWhite_21: -3693257956788617142
+      LiquidWhite_22: -1356617802538750128
+      LiquidWhite_23: -2649799242547577922
+      LiquidWhite_24: 6243237652357954134
+      LiquidWhite_25: -3894114254570374851
+      LiquidWhite_26: 7805619250690959027
+      LiquidWhite_27: 8328561349825889820
+      LiquidWhite_28: 7011487327614938515
+      LiquidWhite_29: -4668943614030956706
+      LiquidWhite_3: -6146041207215336725
+      LiquidWhite_30: 2912841404959529175
+      LiquidWhite_31: -3305174376936117995
+      LiquidWhite_32: -5456750760095978620
+      LiquidWhite_33: 2283509035700131799
+      LiquidWhite_34: 4274544758299634121
+      LiquidWhite_35: -7060316714585056325
+      LiquidWhite_4: -6756564329647204123
+      LiquidWhite_5: 2753319540972670572
+      LiquidWhite_6: -726583161210464535
+      LiquidWhite_7: 5485419300695525253
+      LiquidWhite_8: 6497545588326964080
+      LiquidWhite_9: 4491525687273338436
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

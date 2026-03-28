@@ -1,17 +1,32 @@
-using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+
+[System.Serializable]
+public class PlayerProgressData
+{
+    public int levelsCount;
+    public int currentLevel;
+    public bool[] isLevelCompleted;
+    public int[] levelsDestroyedPegs;
+    public int[] levelsBestShots;
+    public float[] levelsBestTimes;
+}
 
 public class DataHolder : MonoBehaviour
 {
-    DataHolder instance;
+    public static DataHolder instance;
+
     public int currentLevel;
 
     [Header("Player Score for Levels")]
     [SerializeField] int LevelsCount = 15;
+
     private bool[] isLevelCompleted;
     private int[] levelsDestroyedPegs;
     private int[] levelsBestShots;
     private float[] levelsBestTimes;
+
+    private string savePath;
 
     private void Awake()
     {
@@ -21,34 +36,34 @@ public class DataHolder : MonoBehaviour
             return;
         }
 
-        isLevelCompleted = new bool[LevelsCount];
-        levelsBestShots = new int[LevelsCount];
-        levelsBestTimes = new float[LevelsCount];
-        levelsDestroyedPegs = new int[LevelsCount];
-
-        //for (int i = 0; i < LevelsCount; ++i)
-        //{
-        //    isLevelCompleted[i] = false;
-        //    levelsBestShots[i] = -1;
-        //    levelsBestTimes[i] = -1;
-        //    levelsDestroyedPegs[i] = -1;
-        //}
-
         instance = this;
         DontDestroyOnLoad(gameObject);
-        //LoadPlayerProgress();
 
+        savePath = Application.persistentDataPath + "/player_progress.json";
+
+        InitArrays();
+        LoadPlayerProgress();
     }
 
-
-    public string Data { get; private set; }
-
-    // TODO: Also add here to load it from JSON files (saves)
-    // and save it as well
-    private void Start()
+    private void InitArrays()
     {
-        //PlayerPrefs.DeleteAll(); // To remove saves
+        isLevelCompleted = new bool[LevelsCount];
+        levelsDestroyedPegs = new int[LevelsCount];
+        levelsBestShots = new int[LevelsCount];
+        levelsBestTimes = new float[LevelsCount];
+
+        for (int i = 0; i < LevelsCount; i++)
+        {
+            isLevelCompleted[i] = false;
+            levelsDestroyedPegs[i] = -1;
+            levelsBestShots[i] = -1;
+            levelsBestTimes[i] = -1;
+        }
     }
+
+    // =========================
+    // GETTERS / SETTERS
+    // =========================
 
     public void SetLevelCompleted(int level)
     {
@@ -62,7 +77,7 @@ public class DataHolder : MonoBehaviour
 
     public bool SetNewDestroyedPegs(int level, int newPegsCount)
     {
-        if (newPegsCount < levelsDestroyedPegs[level])
+        if (levelsDestroyedPegs[level] == -1 || newPegsCount < levelsDestroyedPegs[level])
         {
             levelsDestroyedPegs[level] = newPegsCount;
             return true;
@@ -72,13 +87,12 @@ public class DataHolder : MonoBehaviour
 
     public int GetLevelDestroyedPegs(int level)
     {
-        Debug.Log("PegsDestrpyed: " + levelsDestroyedPegs[level]);
         return levelsDestroyedPegs[level];
     }
 
     public bool SetNewBestTime(int level, float newTime)
     {
-        if (newTime < levelsBestTimes[level] || levelsBestTimes[level] == -1)
+        if (levelsBestTimes[level] == -1 || newTime < levelsBestTimes[level])
         {
             levelsBestTimes[level] = newTime;
             return true;
@@ -93,53 +107,58 @@ public class DataHolder : MonoBehaviour
 
     public bool SetNewBestShot(int level, int newShotsCount)
     {
-        if (newShotsCount < levelsBestShots[level] || levelsBestShots[level] == -1)
+        if (levelsBestShots[level] == -1 || newShotsCount < levelsBestShots[level])
         {
             levelsBestShots[level] = newShotsCount;
-            return true;    
+            return true;
         }
         return false;
     }
 
-    public int GetLevelBestShot(int level) 
-    { 
+    public int GetLevelBestShot(int level)
+    {
         return levelsBestShots[level];
-    }
-
-    public void OnLevelWon()
-    {
-        currentLevel++;
-        SavePlayerProgress();
-    }
-
-    public void LoadCurrentLevel()
-    {
-        // Load the level if needed
     }
 
     public void SavePlayerProgress()
     {
+        PlayerProgressData data = new PlayerProgressData
+        {
+            levelsCount = LevelsCount,
+            currentLevel = currentLevel,
+            isLevelCompleted = isLevelCompleted,
+            levelsDestroyedPegs = levelsDestroyedPegs,
+            levelsBestShots = levelsBestShots,
+            levelsBestTimes = levelsBestTimes
+        };
 
-        Debug.Log("Saving levelsCount: " + currentLevel);
-        PlayerPrefs.SetInt("levelsCount", LevelsCount);
-        Debug.Log("Saving 1LevelTime: " + levelsBestTimes[0]);
-        PlayerPrefs.SetFloat("1LevelTime", levelsBestTimes[0]);
-        Debug.Log("Saving 1LevelShots: " + levelsBestShots[0]);
-        PlayerPrefs.SetInt("1LevelShots", levelsBestShots[0]);
-        if (isLevelCompleted[0]) PlayerPrefs.SetInt("1LevelCompleted", 1);
-        else PlayerPrefs.SetInt("1LevelCompleted", 0);
+        string json = JsonUtility.ToJson(data, true);
 
-        //levelsBestTimes
-        //Application.persistentDataPath    DATA SAVING PATH IN EVERY DEVICE
-        // TODO: Make it save into Json file and save here
+        File.WriteAllText(savePath, json);
+
+        Debug.Log("Saved to: " + savePath);
     }
 
     public void LoadPlayerProgress()
     {
-        isLevelCompleted[0] = PlayerPrefs.GetInt("1LevelCompleted", 0) == 1;
-        currentLevel = PlayerPrefs.GetInt("levelsCount", 0);
-        levelsBestTimes[0] = PlayerPrefs.GetFloat("1LevelTime", -1);
-        levelsBestShots[0] = PlayerPrefs.GetInt("1LevelShots", -1);
+        if (File.Exists(savePath))
+        {
+            string json = File.ReadAllText(savePath);
 
+            PlayerProgressData data = JsonUtility.FromJson<PlayerProgressData>(json);
+
+            LevelsCount = data.levelsCount;
+            currentLevel = data.currentLevel;
+            isLevelCompleted = data.isLevelCompleted;
+            levelsDestroyedPegs = data.levelsDestroyedPegs;
+            levelsBestShots = data.levelsBestShots;
+            levelsBestTimes = data.levelsBestTimes;
+
+            Debug.Log("Loaded from: " + savePath);
+        }
+        else
+        {
+            Debug.Log("No save file found. Using default values.");
+        }
     }
 }

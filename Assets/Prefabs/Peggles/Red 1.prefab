@@ -94,10 +94,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 408b9b94f453d814cbe9ac5e2fb64098, type: 3}
   - {fileID: 8300000, guid: b042a5fb2dc150e4a93bda370396b949, type: 3}
   - {fileID: 8300000, guid: 571449eaf0777ec4c95026b2b619c558, type: 3}
-  colors:
-  - {r: 0.6273585, g: 0.6779642, b: 1, a: 1}
-  - {r: 0.36258456, g: 0.42096186, b: 0.7924528, a: 1}
-  - {r: 0.23921569, g: 0.28235295, b: 0.5568628, a: 1}
+  particles:
+  - {fileID: 392111996185084988, guid: 70a29aab104210349bab90a726184ea8, type: 3}
+  firstColor: {r: 0.9622642, g: 0.23058024, b: 0.23569782, a: 1}
+  secondColor: {r: 0.9169811, g: 0.33737972, b: 0.37124595, a: 1}
 --- !u!1 &534086559722902742
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +125,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8934874334889229133}
@@ -180,7 +180,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6758901517264320821, guid: 47195b01beafe8a4eac0d424b3aa01cd, type: 3}
-  m_Color: {r: 0.7471075, g: 0.7776075, b: 0.9716981, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

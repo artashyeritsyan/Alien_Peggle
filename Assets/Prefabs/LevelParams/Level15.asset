@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level15
   m_EditorClassIdentifier: Assembly-CSharp::LevelParams
   levelBiome: 4
-  levelAlien: 4
+  levelAlien: 1
   spawningPeggles:
   - {fileID: 467998787066444958, guid: 2fb6670b4809ab94d86035e8f7490aa4, type: 3}
   - {fileID: 467998787066444958, guid: f840b341931c23e4c806fbe7219d9cba, type: 3}
