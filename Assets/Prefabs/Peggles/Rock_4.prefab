@@ -90,6 +90,8 @@ MonoBehaviour:
   health: 1
   pegSounClips:
   - {fileID: 8300000, guid: 2f038f9eafc7ab7488ebc8493d5b2d59, type: 3}
+  - {fileID: 8300000, guid: 1cad53b28841c164c864380a8ef21a1d, type: 3}
+  - {fileID: 8300000, guid: b9ce2d29f2ad48f4fbfdbddad1a80c2e, type: 3}
   particles:
   - {fileID: 3584774378783718644, guid: a80c3872d923d544a90a357f0f68d65d, type: 3}
   firstColor: {r: 0.5529412, g: 0.1764706, b: 0.2901961, a: 1}
