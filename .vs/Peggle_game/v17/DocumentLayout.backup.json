@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\Unity\\Projects\\Peggle_game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|d:\\unity\\projects\\peggle_game\\assets\\scripts\\pegbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pegbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|d:\\unity\\projects\\peggle_game\\assets\\scripts\\pegbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pegbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\pegspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
@@ -102,13 +102,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PegBehaviour.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\PegBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PegBehaviour.cs",
               "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\PegBehaviour.cs",
               "RelativeToolTip": "Assets\\Scripts\\PegBehaviour.cs",
-              "ViewState": "AgIAAIsAAAAAAAAAAAAAAJgAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAAAJkAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-10T17:45:50.406Z",
               "EditorCaption": ""
@@ -127,15 +127,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAKQBAAAAAAAAAAAAALsBAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAANwBAAAAAAAAAAAuwOYBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T08:11:18.481Z"
+              "WhenOpened": "2026-03-10T08:11:18.481Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

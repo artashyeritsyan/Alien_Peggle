@@ -15,8 +15,10 @@ MonoBehaviour:
   levelBiome: 3
   levelAlien: 3
   spawningPeggles:
-  - {fileID: 467998787066444958, guid: 8b76563043c20294f9f25fe184abf41c, type: 3}
-  - {fileID: 467998787066444958, guid: 8b76563043c20294f9f25fe184abf41c, type: 3}
+  - {fileID: 467998787066444958, guid: e270bc1eb87a9b54ebf67112dadc7964, type: 3}
+  - {fileID: 467998787066444958, guid: f840b341931c23e4c806fbe7219d9cba, type: 3}
+  - {fileID: 467998787066444958, guid: e412e5bcff638f74a9b719f914028125, type: 3}
+  - {fileID: 467998787066444958, guid: 84767288d95681e4c93ec4b8706d358d, type: 3}
   pegsCount: 55
   maxShots: 17
   shotsForStar: 14
