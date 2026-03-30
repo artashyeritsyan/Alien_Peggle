@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour
     public float maxTimeForStar;  // TODO: need to get roundTIme from every round (and make private). But now gets from inspector
     private float currentTime;
 
+    [Header("Win Panel Parameters")]
+    [SerializeField] GameObject winPanelStars;
+
+
     [Header("Level Buttons Parameters")]
     [SerializeField] int levelsCount = 15;
     [SerializeField] Transform levelsLayout;
@@ -402,6 +406,12 @@ public class GameManager : MonoBehaviour
             // 2 stands for StarForShot
             AddStar(level, 2);
         }
+
+        // Setting the Win panel start. // TODO:: Later make it another function
+        Transform stars = levelButtons[level].transform.GetChild(0).transform;
+        winPanelStars.transform.GetChild(0).GetComponent<Image>().sprite = stars.GetChild(0).GetComponent<Image>().sprite;
+        winPanelStars.transform.GetChild(1).GetComponent<Image>().sprite = stars.GetChild(1).GetComponent<Image>().sprite;
+        levelInfoStars.transform.GetChild(2).GetComponent<Image>().sprite = stars.GetChild(2).GetComponent<Image>().sprite;
     }
 
     // Adding star to level, and second int for choosing is it for Win for Time or Shots

@@ -89,9 +89,13 @@ MonoBehaviour:
   transformedScale: {x: 1.1, y: 1.1}
   health: 1
   pegSounClips:
-  - {fileID: 8300000, guid: b75ba39ec20fd72408cdc927a36fb671, type: 3}
+  - {fileID: 8300000, guid: 7cc24601b9429b64c85d60ad60397a73, type: 3}
+  - {fileID: 8300000, guid: 29c376b77691eae4187faeed64b6a11a, type: 3}
+  - {fileID: 8300000, guid: a4f8cd67694b9bc4b9937bfc80f360fb, type: 3}
+  - {fileID: 8300000, guid: 7bd3c19a532303748ac9112c5985460a, type: 3}
   particles:
   - {fileID: 5748038767810965592, guid: 297bd31ddd809db4388009b5f92a8f84, type: 3}
+  - {fileID: 3584774378783718644, guid: a80c3872d923d544a90a357f0f68d65d, type: 3}
   firstColor: {r: 0.12228237, g: 0.5924529, b: 0, a: 1}
   secondColor: {r: 0.10650885, g: 1, b: 0, a: 1}
 --- !u!1 &534086559722902742
