@@ -16,6 +16,7 @@ public class BallSpawner : MonoBehaviour
 
     [SerializeField] AudioSource shootAudioSource;
     [SerializeField] List<AudioClip> shootSounds;
+    [SerializeField] AudioClip destroyingSound;
 
 
     // Update is called once per frame
@@ -56,15 +57,24 @@ public class BallSpawner : MonoBehaviour
     private void OnEnable()
     {
         GameManager.IsGamePaused += ChangePauseMode;
+        Ball.OnBallDestroyed += BallDestroyed;
     }
 
     private void OnDisable()
     {
         GameManager.IsGamePaused -= ChangePauseMode;
+        Ball.OnBallDestroyed -= BallDestroyed;
     }
 
     void ChangePauseMode(bool isPaused)
     {
         gamePaused = isPaused;
     }
+
+    private void BallDestroyed()
+    {
+        Debug.Log("Ball Destroyed");
+        AudioManager.Play(destroyingSound);
+    }
+
 }

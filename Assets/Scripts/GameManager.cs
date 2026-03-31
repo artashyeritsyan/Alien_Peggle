@@ -439,8 +439,8 @@ public class GameManager : MonoBehaviour
 
         pegsCountInfoText.text = "Pegs: " + (dataHolder.GetLevelDestroyedPegs(level) < 0 ? 0 : dataHolder.GetLevelDestroyedPegs(level)).ToString()
             + "/" + levelsParams[level].GetPegsCount().ToString();
-        timeInfoText.text = "Best Time:" + ((int)(dataHolder.GetLevelBestTime(level) < 0 ? 0 : dataHolder.GetLevelBestTime(level))).ToString();
-        shotsInfoText.text = "Best Shots" + (dataHolder.GetLevelBestShot(level) < 0 ? 0 : dataHolder.GetLevelBestShot(level)).ToString();
+        timeInfoText.text = "Best Time: " + ((int)(dataHolder.GetLevelBestTime(level) < 0 ? 0 : dataHolder.GetLevelBestTime(level))).ToString();
+        shotsInfoText.text = "Best Shots: " + (dataHolder.GetLevelBestShot(level) < 0 ? 0 : dataHolder.GetLevelBestShot(level)).ToString();
         // TODO: Refactor this logic later
         Transform stars = levelButtons[level].transform.GetChild(0).transform;
         levelInfoStars.transform.GetChild(0).GetComponent<Image>().sprite = stars.GetChild(0).GetComponent<Image>().sprite;

@@ -7,11 +7,9 @@ public class Ball : MonoBehaviour
     public static event Action OnPointCollected;
     public static event Action OnBallDestroyed;
 
-    [SerializeField] AudioSource pegSound;
-    [SerializeField] List<AudioClip> pegSounClips;
 
     [SerializeField] int ballDamage = 1;
-   
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

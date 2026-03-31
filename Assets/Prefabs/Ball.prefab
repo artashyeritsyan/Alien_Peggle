@@ -262,13 +262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fccee65d25a6a3a4fa7b494a1fb8f1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ball
-  pegSound: {fileID: 0}
-  pegSounClips:
-  - {fileID: 8300000, guid: 08d0675d52872264092241742bd73d1b, type: 3}
-  - {fileID: 8300000, guid: ae9f3438e794a334db2816ef4b83281e, type: 3}
-  - {fileID: 8300000, guid: 4ac09a9791aff5e4685283e3dd29151d, type: 3}
-  - {fileID: 8300000, guid: 0a8b3d61fe2c4334aa7bc5a0d92511c8, type: 3}
-  - {fileID: 8300000, guid: a584a45445776d84191a8d94679abca2, type: 3}
+  shootAudioSource: {fileID: 0}
+  destroyingSound: {fileID: 8300000, guid: a4f8cd67694b9bc4b9937bfc80f360fb, type: 3}
   ballDamage: 1
 --- !u!1 &7528951060199309950
 GameObject:

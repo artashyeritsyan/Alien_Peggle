@@ -6237,7 +6237,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: b960e4d6b34a40e4b8dfb5641da602e5, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5e7ca4c96158a7042815fd242dbfb4fe, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -8789,7 +8789,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 429b0dea8f47b144eb12bef77e5c9558, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 0
@@ -9320,6 +9320,7 @@ MonoBehaviour:
   shootSounds:
   - {fileID: 8300000, guid: de446fa143e07404ebd6711ea12b3640, type: 3}
   - {fileID: 8300000, guid: 1820850d07310bb4a973a0a112b9c97a, type: 3}
+  destroyingSound: {fileID: 8300000, guid: a4f8cd67694b9bc4b9937bfc80f360fb, type: 3}
 --- !u!1 &1669745230
 GameObject:
   m_ObjectHideFlags: 0
