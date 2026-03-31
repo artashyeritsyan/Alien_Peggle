@@ -94,6 +94,7 @@ MonoBehaviour:
   particles:
   - {fileID: 392111996185084988, guid: 70a29aab104210349bab90a726184ea8, type: 3}
   - {fileID: 1375353507806458937, guid: de5fcd9b5d71178499c08fddef7a97e4, type: 3}
+  - {fileID: 1623298396792479162, guid: ab06fc1b7fde7784aa1d299569f0aa78, type: 3}
   firstColor: {r: 0.9686275, g: 0.37647063, b: 0.36078432, a: 1}
   secondColor: {r: 0.68235296, g: 0.95294124, b: 0.9960785, a: 1}
 --- !u!1 &534086559722902742

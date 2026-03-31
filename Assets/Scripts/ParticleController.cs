@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class ParticleController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] float delay = 0.5f;
+
     void Start()
     {
-        
+        Destroy(gameObject, delay);
     }
 
-    // Update is called once per frame
-    void Update()
+    public float GetDelay()
     {
-        
+        return delay;
+    }
+
+    public void SetDelay(float newDelay)
+    {
+        delay = newDelay;
     }
 }

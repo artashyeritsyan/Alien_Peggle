@@ -150,9 +150,6 @@ public class PegBehaviour : MonoBehaviour
                 var main2 = ps.main;
                 main2.startColor = secondColor;
             }
-
-            Destroy(particleObj.gameObject, 0.5f);
-
         }
 
         Destroy(gameObject);

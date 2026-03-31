@@ -10,27 +10,28 @@ public class Ball : MonoBehaviour
 
     [SerializeField] int ballDamage = 1;
 
+    [SerializeField] ParticleSystem hittingParticle;
+    [SerializeField] ParticleSystem destroyingParticle;
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("death"))
         {
+            // Spawning and moving in one line. It will be destroyed because of ParticleController after
+            Instantiate(destroyingParticle).transform.position = transform.position;
+
             Destroy(gameObject);
             OnBallDestroyed?.Invoke();
         }
 
         if (collision.gameObject.CompareTag("peg"))
         {
+            Instantiate(hittingParticle).transform.position = transform.position; 
+
             collision.gameObject.GetComponent<PegBehaviour>().TakeDamage(ballDamage);
 
             OnPointCollected?.Invoke();
-
-            //if (pegSounClips.Count > 0)
-            //{
-            //    int randomIndex = UnityEngine.Random.Range(0, pegSounClips.Count);
-            //    pegSound.clip = pegSounClips[randomIndex];
-            //    pegSound.Play();
-            //}
         }
     }
 }

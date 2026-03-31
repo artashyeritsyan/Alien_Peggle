@@ -96,8 +96,9 @@ MonoBehaviour:
   particles:
   - {fileID: 1375353507806458937, guid: de5fcd9b5d71178499c08fddef7a97e4, type: 3}
   - {fileID: 5748038767810965592, guid: 297bd31ddd809db4388009b5f92a8f84, type: 3}
-  - {fileID: 392111996185084988, guid: 70a29aab104210349bab90a726184ea8, type: 3}
-  firstColor: {r: 0.9960785, g: 0.72156864, b: 0.8862746, a: 1}
+  - {fileID: 3871178562533916962, guid: 1de28c69fd6d07e4c9207abba8eed73c, type: 3}
+  - {fileID: 6845850144125539351, guid: 24c9d7a0f38f8a249a38b0e90980578b, type: 3}
+  firstColor: {r: 0.47058827, g: 0.34509805, b: 0.9960785, a: 1}
   secondColor: {r: 0.27058825, g: 0.03529412, b: 0.5294118, a: 1}
 --- !u!1 &534086559722902742
 GameObject:

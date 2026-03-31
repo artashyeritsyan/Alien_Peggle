@@ -262,9 +262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fccee65d25a6a3a4fa7b494a1fb8f1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ball
-  shootAudioSource: {fileID: 0}
-  destroyingSound: {fileID: 8300000, guid: a4f8cd67694b9bc4b9937bfc80f360fb, type: 3}
   ballDamage: 1
+  hittingParticle: {fileID: 3124467517051355568, guid: ac249282f0dedb645a48139139d2848e, type: 3}
+  destroyingParticle: {fileID: 4739264407584629229, guid: abe1c9c11dad89a419000900a264d88b, type: 3}
 --- !u!1 &7528951060199309950
 GameObject:
   m_ObjectHideFlags: 0

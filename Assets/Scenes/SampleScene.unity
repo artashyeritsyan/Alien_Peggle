@@ -9321,6 +9321,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: de446fa143e07404ebd6711ea12b3640, type: 3}
   - {fileID: 8300000, guid: 1820850d07310bb4a973a0a112b9c97a, type: 3}
   destroyingSound: {fileID: 8300000, guid: a4f8cd67694b9bc4b9937bfc80f360fb, type: 3}
+  shootingEffect: {fileID: 5940529053743077331, guid: 378dfbcfa72c2be43a9e0643a95aff75, type: 3}
 --- !u!1 &1669745230
 GameObject:
   m_ObjectHideFlags: 0
@@ -9373,7 +9374,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.002045393, y: 0.12020826}
+  m_Offset: {x: 0.002045393, y: 0.06191635}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9383,7 +9384,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.091746, y: 1.2404165}
+  m_Size: {x: 4.091746, y: 1.1238327}
   m_EdgeRadius: 0
 --- !u!212 &1669745232
 SpriteRenderer:
@@ -9453,7 +9454,7 @@ Transform:
   m_GameObject: {fileID: 1669745230}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -5.61, z: 0}
+  m_LocalPosition: {x: 0.03, y: -5.74, z: 0}
   m_LocalScale: {x: 20, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10158,7 +10159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1793640677
 RectTransform:
   m_ObjectHideFlags: 0

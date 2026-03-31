@@ -77,7 +77,7 @@ public class DataHolder : MonoBehaviour
 
     public bool SetNewDestroyedPegs(int level, int newPegsCount)
     {
-        if (levelsDestroyedPegs[level] == -1 || newPegsCount < levelsDestroyedPegs[level])
+        if (levelsDestroyedPegs[level] == -1 || newPegsCount > levelsDestroyedPegs[level])
         {
             levelsDestroyedPegs[level] = newPegsCount;
             return true;

@@ -18,6 +18,9 @@ public class BallSpawner : MonoBehaviour
     [SerializeField] List<AudioClip> shootSounds;
     [SerializeField] AudioClip destroyingSound;
 
+    [SerializeField] ParticleSystem shootingEffect;
+
+
 
     // Update is called once per frame
     void Update()
@@ -33,8 +36,12 @@ public class BallSpawner : MonoBehaviour
                     PlayRandomSound();
                     pos.z = 0;
                     var newBall = Instantiate(ball, shootPoint.position, Quaternion.identity);
+
                     newBall.GetComponent<Rigidbody2D>().AddForce((pos - transform.position).normalized * shootStrength);
                     OnBallShot?.Invoke();
+
+                    //Spawning and Setting the particle position
+                    Instantiate(shootingEffect, shootPoint).transform.localPosition = new Vector2(0, -0.1f);
                 }
                 else
                 {
