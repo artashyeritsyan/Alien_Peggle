@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777d79512b4557642984ec38f1933b30, type: 3}
+  m_Name: Wave
+  m_EditorClassIdentifier: Assembly-CSharp::PegFigures
+  positions:
+  - {x: 2.5783378e-15, y: 7.75e-43}
+  - {x: 2.5782802e-15, y: 7.75e-43}
+  - {x: 1e-45, y: 0}

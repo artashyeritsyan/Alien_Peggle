@@ -262,6 +262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fccee65d25a6a3a4fa7b494a1fb8f1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ball
+  isGetSmaller: 1
+  ballHealth: 6
   ballDamage: 1
   hittingParticle: {fileID: 3124467517051355568, guid: ac249282f0dedb645a48139139d2848e, type: 3}
   destroyingParticle: {fileID: 4739264407584629229, guid: abe1c9c11dad89a419000900a264d88b, type: 3}
@@ -293,7 +295,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5835081989126122255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

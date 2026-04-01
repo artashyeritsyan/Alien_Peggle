@@ -72,9 +72,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] Button levelStartButton;
     [SerializeField] GameObject levelInfoStars;
 
+    [Header("Sounds")]
+    [SerializeField] AudioSource BgAudioSource;
+    [SerializeField] AudioClip defaultBgMusic;
+    [SerializeField] AudioSource clickSound;
+
+
     [SerializeField] DataHolder dataHolder;
 
-    [SerializeField] AudioSource clickSound;
 
     private void Awake()
     {
@@ -189,7 +194,7 @@ public class GameManager : MonoBehaviour
         CheckIfWin();
     }
 
-    void BallDestroyed ()
+    void BallDestroyed()
     {
         destroyedBallsCount++;
         isBallInGame = false;
@@ -300,7 +305,12 @@ public class GameManager : MonoBehaviour
         //dataHolder.SavePlayerProgress();
         //dataHolder.LoadPlayerProgress();
         //UpdateLevelsStars();
-
+        if (gameOverlay.activeSelf || gameOverPanel.activeSelf || gameWinPanel.activeSelf)
+        {
+            BgAudioSource.Stop();
+            BgAudioSource.clip = defaultBgMusic;
+            BgAudioSource.Play();
+        }
         DisableAllPanels();
         levelsPanel.SetActive(true);
     }
@@ -308,6 +318,12 @@ public class GameManager : MonoBehaviour
     public void OpenMenuPanel()
     {
         ClearLevel();
+        if (gameOverlay.activeSelf || gameOverPanel.activeSelf || gameWinPanel.activeSelf)
+        {
+            BgAudioSource.Stop();
+            BgAudioSource.clip = defaultBgMusic;
+            BgAudioSource.Play();
+        }
 
         PauseGame(true);
         DisableAllPanels();

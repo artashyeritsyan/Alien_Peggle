@@ -3,48 +3,44 @@
   "WorkspaceRootPath": "D:\\Unity\\Projects\\Peggle_game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\dataholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dataholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\levelconstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\levelconstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|d:\\unity\\projects\\peggle_game\\assets\\levelsdata\\pegfigures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\levelsdata\\pegfigures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|d:\\unity\\projects\\peggle_game\\assets\\scripts\\pegspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pegspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|d:\\unity\\projects\\peggle_game\\assets\\scripts\\ballspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\dataholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dataholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\ballspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\pegbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pegbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\levelconstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\levelconstructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\pegspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pegspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|d:\\unity\\projects\\peggle_game\\assets\\scripts\\particlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\particlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\particlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\levelsdata\\levelparams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\levelsdata\\levelparams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\levelsmanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\levelsmanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,76 +50,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ParticleController.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\ParticleController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ParticleController.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\ParticleController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ParticleController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "PegFigures.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\LevelsData\\PegFigures.cs",
+              "RelativeDocumentMoniker": "Assets\\LevelsData\\PegFigures.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\LevelsData\\PegFigures.cs",
+              "RelativeToolTip": "Assets\\LevelsData\\PegFigures.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T17:11:44.051Z",
+              "WhenOpened": "2026-04-01T20:42:18.223Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "LevelConstructor.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\LevelConstructor.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LevelConstructor.cs",
               "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\LevelConstructor.cs",
               "RelativeToolTip": "Assets\\Scripts\\LevelConstructor.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwCwAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-16T19:58:20.558Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DataHolder.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\DataHolder.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\DataHolder.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\DataHolder.cs",
-              "RelativeToolTip": "Assets\\Scripts\\DataHolder.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAIA+wFAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T19:24:36.863Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "BallSpawner.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\BallSpawner.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\BallSpawner.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\BallSpawner.cs",
-              "RelativeToolTip": "Assets\\Scripts\\BallSpawner.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAwCoAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T19:34:57.104Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "PegSpawner.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\PegSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PegSpawner.cs",
               "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\PegSpawner.cs",
               "RelativeToolTip": "Assets\\Scripts\\PegSpawner.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAuwHUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-10T19:17:36.737Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "PegBehaviour.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\PegBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PegBehaviour.cs",
@@ -131,38 +101,47 @@
               "RelativeToolTip": "Assets\\Scripts\\PegBehaviour.cs",
               "ViewState": "AgIAAIAAAAAAAAAAAAAowIYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T17:45:50.406Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-10T17:45:50.406Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
+              "Title": "BallSpawner.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\BallSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\BallSpawner.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\BallSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\BallSpawner.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwCoAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T19:34:57.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Ball.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\Ball.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Ball.cs",
               "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\Ball.cs",
               "RelativeToolTip": "Assets\\Scripts\\Ball.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T17:41:46.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-10T17:41:46.558Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAANUAAAAAAAAAAIA8wOoAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAArwGQAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T08:11:18.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-10T08:11:18.481Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "AudioManager.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\AudioManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AudioManager.cs",
@@ -174,27 +153,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "LevelParams.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\LevelsData\\LevelParams.cs",
-              "RelativeDocumentMoniker": "Assets\\LevelsData\\LevelParams.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\LevelsData\\LevelParams.cs",
-              "RelativeToolTip": "Assets\\LevelsData\\LevelParams.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAIA5wCcAAAAxAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "DataHolder.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\DataHolder.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DataHolder.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\DataHolder.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DataHolder.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAArwFAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T18:43:47.118Z"
+              "WhenOpened": "2026-03-16T19:24:36.863Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LevelsManagerScript.cs",
-              "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\LevelsManagerScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\LevelsManagerScript.cs",
-              "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\LevelsManagerScript.cs",
-              "RelativeToolTip": "Assets\\Scripts\\LevelsManagerScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "ParticleController.cs",
+              "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\ParticleController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ParticleController.cs",
+              "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\ParticleController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ParticleController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T10:02:46.73Z"
+              "WhenOpened": "2026-03-31T17:11:44.051Z"
             }
           ]
         }

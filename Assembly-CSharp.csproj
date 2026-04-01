@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\ParticleController.cs" />
     <Compile Include="Assets\Scripts\PegSpawner.cs" />
     <Compile Include="Assets\Scripts\BallSpawner.cs" />
+    <Compile Include="Assets\LevelsData\PegFigures.cs" />
     <Compile Include="Assets\Scripts\PegBehaviour.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\DataHolder.cs" />
