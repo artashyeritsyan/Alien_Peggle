@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
         CreateLevelButtons();
         dataHolder.LoadPlayerProgress();
         UpdateLevelsStars();
-        //savedData = FindFirstObjectByType<DataHolder>(); 
+        //savedData = FindFirstObjectByType<DataHolder>();
 
         DisableAllPanels();
         menuPanel.SetActive(true);

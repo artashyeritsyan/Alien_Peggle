@@ -22,6 +22,7 @@ public enum Aliens
 [CreateAssetMenu(fileName = "LevelParams", menuName = "Scriptable Objects/LevelParams")]
 public class LevelParams : ScriptableObject
 {
+    [SerializeField] int levelNumber;
     [SerializeField] Biomes levelBiome;
     [SerializeField] Aliens levelAlien;
     [SerializeField] GameObject[] spawningPeggles;
@@ -33,6 +34,7 @@ public class LevelParams : ScriptableObject
     [SerializeField] int timeForStar;
 
 
+    public int GetLevelNumber() {  return levelNumber; }
     //public Biomes GetBiome() { return LevelBiome; }  // Dont need now
     public int GetBiome() { return ((int)levelBiome); }
     public int GetAlien() { return ((int)levelAlien); }

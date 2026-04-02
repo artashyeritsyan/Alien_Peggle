@@ -8,6 +8,7 @@ TagManager:
   - peg
   - audioSource
   - ball
+  - pattern
   layers:
   - Default
   - TransparentFX

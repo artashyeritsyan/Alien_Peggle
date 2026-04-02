@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -13,6 +14,7 @@ public class PegSpawner : MonoBehaviour
     //private List<GameObject> spawnedPegs;
     public Transform pegsParent;
 
+    private GameObject currentPatternObject;
 
     void Start()
     {
@@ -49,6 +51,12 @@ public class PegSpawner : MonoBehaviour
 
     public void ClearPegs()
     {
+        if (currentPatternObject)
+        {
+            Destroy(currentPatternObject);
+        }
+
+
         if (pegsParent.childCount > 0)
         {
             for (int i = 0; i < pegsParent.childCount; i++)
@@ -104,7 +112,19 @@ public class PegSpawner : MonoBehaviour
         }
     }
 
-
+    public void CreateLevelByPattern(Transform patternParent)
+    {
+        ClearPegs();
+        currentPatternObject = Instantiate(patternParent.gameObject, new Vector2(0, 0), Quaternion.identity);
+        for (int i = 0; i < patternParent.childCount; i++)
+        {
+            int pegIndex = Random.Range(0, pegsPrefabs.Length);
+            //patternParent.GetChild(i).gameObject.SetActive(false);
+            Instantiate(pegsPrefabs[pegIndex], patternParent.GetChild(i).position, Quaternion.identity, pegsParent);
+            //spawned++;
+        }
+        Destroy(currentPatternObject);
+    }
     public void SetCanShoot(bool canShoot)
     {
         

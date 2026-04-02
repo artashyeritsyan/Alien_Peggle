@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelConstructor : MonoBehaviour
 {
     [SerializeField] PegSpawner pegSpawner;
-    [SerializeField] PegFigures pegFigures;
+    [SerializeField] Transform[] patternParents;
 
     [Header("Backgorund")]
     [SerializeField] List<Sprite> backgrounds;
@@ -38,12 +38,50 @@ public class LevelConstructor : MonoBehaviour
         backgroundObject.GetComponent<SpriteRenderer>().sprite = backgrounds[levelParams.GetBiome()];
         pegSpawner.SetPegPrefabs(levelParams.GetLevelPegs());
 
-        pegSpawner.CreateLevelWithPegCount(levelParams.GetPegsCount());
-
-        for (int i = 0; i < pegFigures.positions.Length; i++)
+        switch (levelParams.GetBiome()) 
         {
-            //Instantiate()
+            // if biome 2-nd (water biome)
+            case 0:
+                if (levelParams.GetLevelNumber() % 3 == 1)
+                {
+                    pegSpawner.CreateLevelByPattern(patternParents[2]);
+                }
+                else if (levelParams.GetLevelNumber() % 3 == 2)
+                {
+                    pegSpawner.CreateLevelByPattern(patternParents[3]);
+                }
+                else
+                {
+                    pegSpawner.CreateLevelWithPegCount(levelParams.GetPegsCount());
+                }
+                break;
+            case 2:
+                // Just a temporary solution. // TODO: make the Level params map strucuture, Handle this parts more clear
+                if (levelParams.GetLevelNumber() % 3 == 1)
+                {
+                    pegSpawner.CreateLevelByPattern(patternParents[0]);
+                }
+                else if(levelParams.GetLevelNumber() % 3 == 2)
+                {
+                    pegSpawner.CreateLevelByPattern(patternParents[1]);
+                }
+                else
+                {
+                    pegSpawner.CreateLevelWithPegCount(levelParams.GetPegsCount());
+                }
+                break;
+
+            default:
+                pegSpawner.CreateLevelWithPegCount(levelParams.GetPegsCount());
+                break;
         }
+
+        //pegSpawner.CreateLevelWithPegCount(levelParams.GetPegsCount());
+
+        //for (int i = 0; i < pegFigures.positions.Length; i++)
+        //{
+        //    //Instantiate()
+        //}
         // TODO: Call te pegSpawner to spawn the exact count of pegs we needed. (Also I can pre create the level)
         // TODO: Refactor the PegSpawner to Create pegs in exact pegs without random
     }
