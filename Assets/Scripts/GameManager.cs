@@ -76,7 +76,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioSource BgAudioSource;
     [SerializeField] AudioClip defaultBgMusic;
     [SerializeField] AudioSource clickSound;
+    [SerializeField] Button soundButton;
+    [SerializeField] Button musicButton;
 
+    [SerializeField] Sprite soundONSprite;
+    [SerializeField] Sprite soundOFFSprite;
+
+    [SerializeField] Sprite musicONSprite;
+    [SerializeField] Sprite musicOFFSprite;
+
+    [SerializeField] bool isSoundOn;
+    [SerializeField] bool isMusicOn;
 
     [SerializeField] DataHolder dataHolder;
 
@@ -305,11 +315,15 @@ public class GameManager : MonoBehaviour
         //dataHolder.SavePlayerProgress();
         //dataHolder.LoadPlayerProgress();
         //UpdateLevelsStars();
+
         if (gameOverlay.activeSelf || gameOverPanel.activeSelf || gameWinPanel.activeSelf)
         {
             BgAudioSource.Stop();
             BgAudioSource.clip = defaultBgMusic;
-            BgAudioSource.Play();
+
+            if (isMusicOn) { 
+                BgAudioSource.Play(); 
+            }
         }
         DisableAllPanels();
         levelsPanel.SetActive(true);
@@ -322,7 +336,10 @@ public class GameManager : MonoBehaviour
         {
             BgAudioSource.Stop();
             BgAudioSource.clip = defaultBgMusic;
-            BgAudioSource.Play();
+            if (isMusicOn)
+            {
+                BgAudioSource.Play();
+            }
         }
 
         PauseGame(true);
@@ -440,12 +457,9 @@ public class GameManager : MonoBehaviour
         {
             stars.GetChild(starIdx).GetComponent<Image>().sprite = filledStarSprite;
         }
-
-
     }
 
     // This Function Can be called only from outside, And only from button!
-
     void OpenLevelConfirmingPanel(int level)
     {
         levelConfirmingPanel.SetActive(true);
@@ -517,4 +531,43 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ToggleSound()
+    {
+        Image buttonImage = soundButton.gameObject.transform.GetChild(0).GetComponent<Image>();
+        if (isSoundOn)
+        {
+            isSoundOn = false;
+            buttonImage.sprite = soundOFFSprite;
+        }
+        else
+        {
+            isSoundOn = true;
+            buttonImage.sprite = soundONSprite;
+        }
+    }
+    public void ToggleMusic()
+    {
+        Image buttonImage = musicButton.gameObject.transform.GetChild(0).GetComponent<Image>();
+        if (isMusicOn)
+        {
+            isMusicOn = false;
+            buttonImage.sprite = soundOFFSprite;
+        }
+        else
+        {
+            isMusicOn = true;
+            buttonImage.sprite = soundONSprite;
+            BgAudioSource.Play();
+        }
+    }
+
+    public bool GetIsSoundOn()
+    {
+        return isSoundOn;
+    }
+
+    public bool GetIsMusicOn()
+    {
+        return isSoundOn;
+    }
 }
