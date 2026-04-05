@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Toolbars;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 
@@ -76,8 +74,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioSource BgAudioSource;
     [SerializeField] AudioClip defaultBgMusic;
     [SerializeField] AudioSource clickSound;
-    [SerializeField] Button soundButton;
-    [SerializeField] Button musicButton;
+    [SerializeField] Button overlaySoundButton;
+    [SerializeField] Button overlayMusicButton;
+    [SerializeField] Button menuSoundButton;
+    [SerializeField] Button menuMusicButton;
 
     [SerializeField] Sprite soundONSprite;
     [SerializeField] Sprite soundOFFSprite;
@@ -122,6 +122,9 @@ public class GameManager : MonoBehaviour
         shotsLeft = maxShotsCount;
         UpdateScoreText();
         UpdateShotsText();
+
+        isMusicOn = true;
+        isSoundOn = true;
     }
 
     private void Update()
@@ -168,6 +171,14 @@ public class GameManager : MonoBehaviour
         if (maxPegsCount == destroyedPegsCount)
         {
             GameWin();
+        }
+    }
+
+    public void PlayClickSound()
+    {
+        if (isSoundOn)
+        {
+            clickSound.Play();
         }
     }
 
@@ -320,10 +331,7 @@ public class GameManager : MonoBehaviour
         {
             BgAudioSource.Stop();
             BgAudioSource.clip = defaultBgMusic;
-
-            if (isMusicOn) { 
-                BgAudioSource.Play(); 
-            }
+            BgAudioSource.Play(); 
         }
         DisableAllPanels();
         levelsPanel.SetActive(true);
@@ -361,7 +369,7 @@ public class GameManager : MonoBehaviour
             newButton.GetComponentInChildren<TMP_Text>().text = (levelNumber + 1).ToString();
 
             newButton.GetComponent<Button>().onClick.AddListener(() => SetChoosenLevelIdx(levelNumber));
-            newButton.GetComponent<Button>().onClick.AddListener(() => clickSound.Play());
+            newButton.GetComponent<Button>().onClick.AddListener(() => PlayClickSound());
 
             levelButtons.Add(newButton);
             //newButton.GetChildren
@@ -533,31 +541,39 @@ public class GameManager : MonoBehaviour
 
     public void ToggleSound()
     {
-        Image buttonImage = soundButton.gameObject.transform.GetChild(0).GetComponent<Image>();
+        Image overlayButton = overlaySoundButton.gameObject.transform.GetChild(0).GetComponent<Image>();
+        Image menuButton = menuSoundButton.gameObject.transform.GetChild(0).GetComponent<Image>();
         if (isSoundOn)
         {
             isSoundOn = false;
-            buttonImage.sprite = soundOFFSprite;
+            overlayButton.sprite = soundOFFSprite;
+            menuButton.sprite = soundOFFSprite;
+
         }
         else
         {
             isSoundOn = true;
-            buttonImage.sprite = soundONSprite;
+            overlayButton.sprite = soundONSprite;
+            menuButton.sprite = soundONSprite;
         }
     }
     public void ToggleMusic()
     {
-        Image buttonImage = musicButton.gameObject.transform.GetChild(0).GetComponent<Image>();
+        Image overlayButton = overlayMusicButton.gameObject.transform.GetChild(0).GetComponent<Image>();
+        Image menuButton = menuMusicButton.gameObject.transform.GetChild(0).GetComponent<Image>();
         if (isMusicOn)
         {
             isMusicOn = false;
-            buttonImage.sprite = soundOFFSprite;
+            overlayButton.sprite = musicOFFSprite;
+            menuButton.sprite = musicOFFSprite;
+            BgAudioSource.volume = 0;
         }
         else
         {
             isMusicOn = true;
-            buttonImage.sprite = soundONSprite;
-            BgAudioSource.Play();
+            overlayButton.sprite = musicONSprite;
+            menuButton.sprite = musicONSprite;
+            BgAudioSource.volume = 1;
         }
     }
 

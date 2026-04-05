@@ -158,8 +158,9 @@ public class PegBehaviour : MonoBehaviour
 
     void PlayRandomSound()   
     {
-        if (pegSounClips.Count > 0)
+        if (pegSounClips.Count > 0 && GameManager.instance.GetIsSoundOn())
         {
+            Debug.Log("Pegg soundd");
             int randomIndex = UnityEngine.Random.Range(0, pegSounClips.Count);
             //pegSound.clip = pegSounClips[randomIndex];
             //pegSound.Play();

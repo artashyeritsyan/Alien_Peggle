@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour
 
     public static void Play(AudioClip clip)
     {
-        if (Instance == null || clip == null)
+        if (Instance == null || clip == null || !GameManager.instance.GetIsSoundOn())
             return;
 
         AudioSource freeSource = null;

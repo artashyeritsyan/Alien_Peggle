@@ -19,35 +19,35 @@ public class PegSpawner : MonoBehaviour
     void Start()
     {
         //spawnedPegs = new List<GameObject>();
-        CreateLevel();
+        //CreateLevel();
     }
 
-    public void CreateLevel()
-    {
-        ClearPegs();
+    //public void CreateLevel()
+    //{
+    //    ClearPegs();
 
-        for (float i = minY; i <= maxY; i += yInterval)
-        {
-            for (float j = minX; j <= maxX; j += xInterval)
-            {
-                int pegIndex = Random.Range(0, pegsPrefabs.Length);
-                if (i % 2 == 0)
-                {
-                    float offsetX = j + xInterval / 2;
-                    if (offsetX > maxX) continue;
-                    //Instantiate(pegs[pegIndex], new Vector2(offsetX, i), Quaternion.identity);
-                     Instantiate(pegsPrefabs[pegIndex], new Vector2(offsetX + randomStrength * (Random.value - 0.5f), i + randomStrength * (Random.value - 0.5f)), Quaternion.identity, pegsParent);
-                    //spawnedPegs.Add(newPeg);
-                }
-                else
-                {
-                    Instantiate(pegsPrefabs[pegIndex], new Vector2(j, i), Quaternion.identity, pegsParent);
-                    //spawnedPegs.Add(newPeg);
+    //    for (float i = minY; i <= maxY; i += yInterval)
+    //    {
+    //        for (float j = minX; j <= maxX; j += xInterval)
+    //        {
+    //            int pegIndex = Random.Range(0, pegsPrefabs.Length);
+    //            if (i % 2 == 0)
+    //            {
+    //                float offsetX = j + xInterval / 2;
+    //                if (offsetX > maxX) continue;
+    //                //Instantiate(pegs[pegIndex], new Vector2(offsetX, i), Quaternion.identity);
+    //                 Instantiate(pegsPrefabs[pegIndex], new Vector2(offsetX + randomStrength * (Random.value - 0.5f), i + randomStrength * (Random.value - 0.5f)), Quaternion.identity, pegsParent);
+    //                //spawnedPegs.Add(newPeg);
+    //            }
+    //            else
+    //            {
+    //                Instantiate(pegsPrefabs[pegIndex], new Vector2(j, i), Quaternion.identity, pegsParent);
+    //                //spawnedPegs.Add(newPeg);
 
-                }
-            }
-        }
-    }
+    //            }
+    //        }
+    //    }
+    //}
 
     public void ClearPegs()
     {

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class BallSpawner : MonoBehaviour
 {
@@ -20,13 +21,14 @@ public class BallSpawner : MonoBehaviour
 
     [SerializeField] ParticleSystem shootingEffect;
 
-
-
     // Update is called once per frame
     void Update()
     {
         if (!gamePaused)
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
             Vector3 pos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             pivot.rotation = Quaternion.Euler(0, 0, -Quaternion.LookRotation(pos - transform.position, Vector3.back).eulerAngles.z);
             if (Mouse.current.leftButton.wasPressedThisFrame && GameManager.instance.CanShoot())
@@ -53,7 +55,7 @@ public class BallSpawner : MonoBehaviour
 
     void PlayRandomSound()
     {
-        if (shootSounds.Count > 0)
+        if (shootSounds.Count > 0 && GameManager.instance.GetIsSoundOn())
         {
             int randomIndex = UnityEngine.Random.Range(0, shootSounds.Count);
 
@@ -81,7 +83,10 @@ public class BallSpawner : MonoBehaviour
     private void BallDestroyed()
     {
         Debug.Log("Ball Destroyed");
-        AudioManager.Play(destroyingSound);
+        if (GameManager.instance.GetIsSoundOn())
+        {
+            AudioManager.Play(destroyingSound);
+        }
     }
 
 }
