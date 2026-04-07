@@ -21,5 +21,5 @@ MonoBehaviour:
   - {fileID: 467998787066444958, guid: 2fb6670b4809ab94d86035e8f7490aa4, type: 3}
   pegsCount: 45
   maxShots: 12
-  shotsForStar: 8
-  timeForStar: 40
+  shotsForStar: 9
+  timeForStar: 45

@@ -477,12 +477,22 @@ public class GameManager : MonoBehaviour
         levelStartButton.GetComponent<Button>().onClick.AddListener(() => CallLevel(level));
 
 
-        pegsCountInfoText.text = "Pegs: " + (dataHolder.GetLevelDestroyedPegs(level) < 0 ? 0 : dataHolder.GetLevelDestroyedPegs(level)).ToString()
+        pegsCountInfoText.text = "Pegs:  " + (dataHolder.GetLevelDestroyedPegs(level) < 0 ? 0 : dataHolder.GetLevelDestroyedPegs(level)).ToString()
             + "/" + levelsParams[level].GetPegsCount().ToString();
-        timeInfoText.text = "Best Time: " + ((int)(dataHolder.GetLevelBestTime(level) < 0 ? 0 : dataHolder.GetLevelBestTime(level))).ToString();
-        shotsInfoText.text = "Best Shots: " + (dataHolder.GetLevelBestShot(level) < 0 ? 0 : dataHolder.GetLevelBestShot(level)).ToString();
-        timeForStarText.text = "Time needs for star: " + levelsParams[level].GetTimeForStar().ToString();
-        shotsForStarText.text = "Shots needs for star: " + levelsParams[level].GetShotsForStar().ToString();
+        shotsInfoText.text = "Best Shots:  " + (dataHolder.GetLevelBestShot(level) < 0 ? 0 : dataHolder.GetLevelBestShot(level)).ToString();
+        shotsForStarText.text = "Target Shots:  " + levelsParams[level].GetShotsForStar().ToString();
+
+        //Time prints part
+        {
+            float bestTime = dataHolder.GetLevelBestTime(level);
+            if (bestTime < 0)
+                bestTime = 0;
+
+            float starTime = levelsParams[level].GetTimeForStar();
+
+            timeInfoText.text = "Best Time:  " + System.TimeSpan.FromSeconds(bestTime).ToString(@"mm\:ss");
+            timeForStarText.text = "Target Time:  " + System.TimeSpan.FromSeconds(starTime).ToString(@"mm\:ss");
+        }
 
         // TODO: Refactor this logic later
         Transform stars = levelButtons[level].transform.GetChild(0).transform;

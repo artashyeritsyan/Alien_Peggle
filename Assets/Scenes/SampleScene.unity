@@ -1993,7 +1993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TIme for star: 40  '
+  m_text: 'Target Time:  00:40  '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3644276a1b27a54f9e7642ebe6a1f4f, type: 2}
   m_sharedMaterial: {fileID: -5664423317442254413, guid: b3644276a1b27a54f9e7642ebe6a1f4f, type: 2}
@@ -5219,7 +5219,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:42 | 00:30
+  m_text: Best Time
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3644276a1b27a54f9e7642ebe6a1f4f, type: 2}
   m_sharedMaterial: {fileID: -5664423317442254413, guid: b3644276a1b27a54f9e7642ebe6a1f4f, type: 2}
@@ -7339,7 +7339,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10 | 11
+  m_text: 'Best SHots: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3644276a1b27a54f9e7642ebe6a1f4f, type: 2}
   m_sharedMaterial: {fileID: -5664423317442254413, guid: b3644276a1b27a54f9e7642ebe6a1f4f, type: 2}
@@ -7376,9 +7376,9 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: -15
+  m_characterSpacing: -16.09
   m_characterHorizontalScale: 1
-  m_wordSpacing: 0
+  m_wordSpacing: 3
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -10704,18 +10704,18 @@ MonoBehaviour:
   spawner: {fileID: 1075840804}
   levelConstructor: {fileID: 178363874}
   levelsParams:
-  - {fileID: 11400000, guid: 0820493bfadb013408cef88c013490f6, type: 2}
-  - {fileID: 11400000, guid: 1939f82d848c29e47b8d2f019cb19e4e, type: 2}
-  - {fileID: 11400000, guid: db19d27d379d58049ab2489efb139f6c, type: 2}
-  - {fileID: 11400000, guid: 0cd205bd969c1e24b95c776b08eef4ea, type: 2}
-  - {fileID: 11400000, guid: 9d55f97db19aa0740b7183c9cf561a2f, type: 2}
-  - {fileID: 11400000, guid: e3eb4eceecce4f040a9ed2eca795c96e, type: 2}
   - {fileID: 11400000, guid: 551f1980a107d3949a7a0d69ddc29a09, type: 2}
   - {fileID: 11400000, guid: c6bbe28ab6d27a646adf5b68b657cb40, type: 2}
   - {fileID: 11400000, guid: 3861a5add249afb4db76226abd052bfd, type: 2}
+  - {fileID: 11400000, guid: 0cd205bd969c1e24b95c776b08eef4ea, type: 2}
+  - {fileID: 11400000, guid: 9d55f97db19aa0740b7183c9cf561a2f, type: 2}
+  - {fileID: 11400000, guid: e3eb4eceecce4f040a9ed2eca795c96e, type: 2}
   - {fileID: 11400000, guid: 2726677a3b8ea024d8db3f4c2b7b3233, type: 2}
   - {fileID: 11400000, guid: 9e795f90e14cfd84f83b126a3f82ac04, type: 2}
   - {fileID: 11400000, guid: 683ecdbab3ede8b4d872b65b2f27cf96, type: 2}
+  - {fileID: 11400000, guid: 0820493bfadb013408cef88c013490f6, type: 2}
+  - {fileID: 11400000, guid: 1939f82d848c29e47b8d2f019cb19e4e, type: 2}
+  - {fileID: 11400000, guid: db19d27d379d58049ab2489efb139f6c, type: 2}
   - {fileID: 11400000, guid: 9a3b82917b630ff4e8719aa34343a01b, type: 2}
   - {fileID: 11400000, guid: 7b1e4d2fe28bad544a296f1dba06461c, type: 2}
   - {fileID: 11400000, guid: 500803ba4acaf5f44a04fe1fd05ef518, type: 2}
@@ -13802,7 +13802,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Shots for star: 8 '
+  m_text: 'Target Shots:  8 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3644276a1b27a54f9e7642ebe6a1f4f, type: 2}
   m_sharedMaterial: {fileID: -5664423317442254413, guid: b3644276a1b27a54f9e7642ebe6a1f4f, type: 2}
@@ -13835,11 +13835,11 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 100
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: -16.17
+  m_characterSpacing: -16.13
   m_characterHorizontalScale: 1
   m_wordSpacing: 14.8
   m_lineSpacing: 0
