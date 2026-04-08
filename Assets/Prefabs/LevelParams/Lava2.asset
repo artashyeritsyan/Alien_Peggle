@@ -7,19 +7,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73f3b626cdc97e44f8779f13d93aa32a, type: 3}
-  m_Name: Level7
+  m_Name: Lava2
   m_EditorClassIdentifier: Assembly-CSharp::LevelParams
-  levelNumber: 6
-  levelBiome: 2
-  levelAlien: 2
+  levelId: 5
+  levelBiome: 1
+  levelAlien: 4
   spawningPeggles:
-  - {fileID: 467998787066444958, guid: 9da6e408909d8d84eb61d2939124cbb7, type: 3}
-  - {fileID: 467998787066444958, guid: 7f2ce7ef98c04b543918a19c457a28b1, type: 3}
-  - {fileID: 467998787066444958, guid: 9325b0bf8334efe439ea256637a88201, type: 3}
-  pegsCount: 35
-  maxShots: 13
-  shotsForStar: 10
+  - {fileID: 467998787066444958, guid: df62624535b682c4f98bf807269e4a45, type: 3}
+  - {fileID: 467998787066444958, guid: a84d8ae9bd4d794438286acad3d494be, type: 3}
+  - {fileID: 467998787066444958, guid: 2fb6670b4809ab94d86035e8f7490aa4, type: 3}
+  patternParent: {fileID: 0}
+  pegsCount: 45
+  maxShots: 12
+  shotsForStar: 9
   timeForStar: 45

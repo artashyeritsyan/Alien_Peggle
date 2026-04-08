@@ -7,19 +7,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73f3b626cdc97e44f8779f13d93aa32a, type: 3}
-  m_Name: Level1
+  m_Name: Water1
   m_EditorClassIdentifier: Assembly-CSharp::LevelParams
-  levelNumber: 0
-  levelBiome: 0
-  levelAlien: 0
+  levelId: 1
+  levelBiome: 2
+  levelAlien: 2
   spawningPeggles:
-  - {fileID: 467998787066444958, guid: 6ffdd991447d36749b226c13be519475, type: 3}
-  - {fileID: 467998787066444958, guid: 4c4122b083e33544f87bfc328ae45c34, type: 3}
-  - {fileID: 467998787066444958, guid: 3a9bf33828381844ab9e1a52192f59b0, type: 3}
+  - {fileID: 467998787066444958, guid: 9da6e408909d8d84eb61d2939124cbb7, type: 3}
+  - {fileID: 467998787066444958, guid: 7f2ce7ef98c04b543918a19c457a28b1, type: 3}
+  - {fileID: 467998787066444958, guid: 9325b0bf8334efe439ea256637a88201, type: 3}
+  patternParent: {fileID: 0}
   pegsCount: 35
-  maxShots: 12
-  shotsForStar: 9
-  timeForStar: 40
+  maxShots: 13
+  shotsForStar: 10
+  timeForStar: 45

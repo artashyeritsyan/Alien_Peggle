@@ -7,19 +7,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73f3b626cdc97e44f8779f13d93aa32a, type: 3}
-  m_Name: Level13
+  m_Name: Purple3
   m_EditorClassIdentifier: Assembly-CSharp::LevelParams
-  levelNumber: 12
+  levelId: 15
   levelBiome: 4
   levelAlien: 1
   spawningPeggles:
+  - {fileID: 467998787066444958, guid: 14196b1561c223747b158d68df7df99c, type: 3}
+  - {fileID: 467998787066444958, guid: 1fd219a70b2b0cb4eb898a95b597df1d, type: 3}
+  - {fileID: 467998787066444958, guid: abd507bb0c5ad004188e8498b5c5e3fa, type: 3}
   - {fileID: 467998787066444958, guid: 619f4683de72e274bb8f644a53453ec0, type: 3}
-  - {fileID: 467998787066444958, guid: 00c2925eac5195845b9ab911fc5ae572, type: 3}
-  - {fileID: 467998787066444958, guid: 732cb7bfe1777bd4c95ad29b83c12d86, type: 3}
-  pegsCount: 55
-  maxShots: 14
-  shotsForStar: 11
-  timeForStar: 60
+  patternParent: {fileID: 0}
+  pegsCount: 70
+  maxShots: 20
+  shotsForStar: 15
+  timeForStar: 75

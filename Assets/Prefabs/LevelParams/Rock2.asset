@@ -7,12 +7,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73f3b626cdc97e44f8779f13d93aa32a, type: 3}
-  m_Name: Level11
+  m_Name: Rock2
   m_EditorClassIdentifier: Assembly-CSharp::LevelParams
-  levelNumber: 10
+  levelId: 8
   levelBiome: 3
   levelAlien: 3
   spawningPeggles:
@@ -20,6 +20,7 @@ MonoBehaviour:
   - {fileID: 467998787066444958, guid: f840b341931c23e4c806fbe7219d9cba, type: 3}
   - {fileID: 467998787066444958, guid: e412e5bcff638f74a9b719f914028125, type: 3}
   - {fileID: 467998787066444958, guid: 84767288d95681e4c93ec4b8706d358d, type: 3}
+  patternParent: {fileID: 0}
   pegsCount: 55
   maxShots: 16
   shotsForStar: 13
