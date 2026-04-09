@@ -4311,7 +4311,7 @@ Transform:
   m_LocalScale: {x: 0.098, y: 0.098, z: 0.098}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1451433885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &620056955
 GameObject:
@@ -4780,7 +4780,7 @@ Transform:
   m_LocalScale: {x: 0.098, y: 0.098, z: 0.098}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1451433885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &666468068
 GameObject:
@@ -7472,7 +7472,7 @@ Transform:
   m_LocalScale: {x: 0.098, y: 0.098, z: 0.098}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1451433885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1044861435
 GameObject:
@@ -7875,7 +7875,7 @@ Transform:
   m_LocalScale: {x: 0.098, y: 0.098, z: 0.098}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1451433885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1103873896
 GameObject:
@@ -7966,7 +7966,7 @@ Transform:
   m_LocalScale: {x: 0.098, y: 0.098, z: 0.098}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1451433885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1109990654
 GameObject:
@@ -9816,6 +9816,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!4 &1451433885 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 569255374300252147, guid: addcb92a4f06b2b4e8c419fb4747c778, type: 3}
+  m_PrefabInstance: {fileID: 2038456922}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1465314096
 GameObject:
   m_ObjectHideFlags: 0
@@ -10057,7 +10062,7 @@ Transform:
   m_LocalScale: {x: 0.098, y: 0.098, z: 0.098}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1451433885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1604738792
 GameObject:
@@ -13454,6 +13459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ElectroPattern1
       objectReference: {fileID: 0}
+    - target: {fileID: 6909552601551702520, guid: addcb92a4f06b2b4e8c419fb4747c778, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7892192368377247704, guid: addcb92a4f06b2b4e8c419fb4747c778, type: 3}
@@ -13492,7 +13501,25 @@ PrefabInstance:
     - {fileID: 2702613547353592609, guid: addcb92a4f06b2b4e8c419fb4747c778, type: 3}
     - {fileID: 2352465323644339891, guid: addcb92a4f06b2b4e8c419fb4747c778, type: 3}
     - {fileID: 6576514876835662656, guid: addcb92a4f06b2b4e8c419fb4747c778, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 569255374300252147, guid: addcb92a4f06b2b4e8c419fb4747c778, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 619937944}
+    - targetCorrespondingSourceObject: {fileID: 569255374300252147, guid: addcb92a4f06b2b4e8c419fb4747c778, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1088983548}
+    - targetCorrespondingSourceObject: {fileID: 569255374300252147, guid: addcb92a4f06b2b4e8c419fb4747c778, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1594355191}
+    - targetCorrespondingSourceObject: {fileID: 569255374300252147, guid: addcb92a4f06b2b4e8c419fb4747c778, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 636471714}
+    - targetCorrespondingSourceObject: {fileID: 569255374300252147, guid: addcb92a4f06b2b4e8c419fb4747c778, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1040932505}
+    - targetCorrespondingSourceObject: {fileID: 569255374300252147, guid: addcb92a4f06b2b4e8c419fb4747c778, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1103873898}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: addcb92a4f06b2b4e8c419fb4747c778, type: 3}
 --- !u!1 &2040476792
@@ -14646,9 +14673,3 @@ SceneRoots:
   - {fileID: 101983708}
   - {fileID: 937297139}
   - {fileID: 2038456922}
-  - {fileID: 619937944}
-  - {fileID: 1088983548}
-  - {fileID: 1594355191}
-  - {fileID: 636471714}
-  - {fileID: 1040932505}
-  - {fileID: 1103873898}

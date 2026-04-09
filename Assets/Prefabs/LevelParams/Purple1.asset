@@ -16,11 +16,9 @@ MonoBehaviour:
   levelBiome: 4
   levelAlien: 1
   spawningPeggles:
-  - {fileID: 467998787066444958, guid: 619f4683de72e274bb8f644a53453ec0, type: 3}
-  - {fileID: 467998787066444958, guid: 00c2925eac5195845b9ab911fc5ae572, type: 3}
-  - {fileID: 467998787066444958, guid: 732cb7bfe1777bd4c95ad29b83c12d86, type: 3}
-  patternParent: {fileID: 0}
-  pegsCount: 55
-  maxShots: 14
-  shotsForStar: 11
-  timeForStar: 60
+  - {fileID: 467998787066444958, guid: 0d734e48d8ff7ea4cb7b2e37857ffa39, type: 3}
+  patternParent: {fileID: 8493359741063992949, guid: 57391bfc0f4b6af4ea39fd370ba56d24, type: 3}
+  pegsCount: 43
+  maxShots: 12
+  shotsForStar: 8
+  timeForStar: 35

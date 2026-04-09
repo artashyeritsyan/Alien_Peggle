@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 868.8
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 41
+  controlID: 42
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 112}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 42
+  controlID: 43
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 43
+  controlID: 44
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -274,8 +274,8 @@ MonoBehaviour:
     y: 0
     width: 309.59998
     height: 812.8
-  m_MinSize: {x: 276, y: 76}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -695,15 +695,7 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -112504
-      - m_Data: -112276
-      - m_Data: -112048
-      - m_Data: -111820
-      - m_Data: -111592
-      - m_Data: -111364
-      - m_Data: -111360
       - m_Data: -1318
-      - m_Data: 49718
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1338,9 +1330,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -0.35196733, y: -1.0345931, z: 0.0071744723}
+    m_Target: {x: -0.42056054, y: -0.05181162, z: -0.01178068}
     speed: 2
-    m_Value: {x: -0.35196733, y: -1.0345931, z: 0.0071744723}
+    m_Value: {x: -0.42056054, y: -0.05181162, z: -0.01178068}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1390,9 +1382,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.3604655
+    m_Target: 5.252639
     speed: 2
-    m_Value: 4.3604655
+    m_Value: 5.252639
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1530,7 +1522,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/PredefinedFigures
+    - Packages/com.unity.2d.tooling/Editor/Insider/Utilities
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1540,71 +1532,71 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/PredefinedFigures
+  - Packages/com.unity.2d.tooling/Editor/Insider/Utilities
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity\Projects\Peggle_game
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 1430.8}
     m_SelectedIDs:
-    - m_Data: 58802
+    - m_Data: 58938
     m_LastClickedID:
-      m_Data: 58802
+      m_Data: 58938
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 58602
-    - m_Data: 58604
-    - m_Data: 58606
-    - m_Data: 58608
-    - m_Data: 58610
-    - m_Data: 58612
-    - m_Data: 58614
-    - m_Data: 58616
-    - m_Data: 58618
-    - m_Data: 58620
-    - m_Data: 58622
-    - m_Data: 58624
-    - m_Data: 58626
-    - m_Data: 58628
-    - m_Data: 58630
-    - m_Data: 58632
-    - m_Data: 58634
-    - m_Data: 58636
-    - m_Data: 58638
-    - m_Data: 58640
-    - m_Data: 58642
-    - m_Data: 58644
-    - m_Data: 58646
-    - m_Data: 58648
-    - m_Data: 58650
-    - m_Data: 58652
-    - m_Data: 58654
-    - m_Data: 58656
-    - m_Data: 58658
-    - m_Data: 58660
-    - m_Data: 58662
-    - m_Data: 58664
-    - m_Data: 58666
-    - m_Data: 58668
-    - m_Data: 58670
-    - m_Data: 58672
-    - m_Data: 58674
-    - m_Data: 58676
-    - m_Data: 58678
-    - m_Data: 58680
-    - m_Data: 58682
-    - m_Data: 58684
-    - m_Data: 58686
-    - m_Data: 58688
-    - m_Data: 58690
+    - m_Data: 58432
+    - m_Data: 58434
+    - m_Data: 58436
+    - m_Data: 58438
+    - m_Data: 58440
+    - m_Data: 58442
+    - m_Data: 58444
+    - m_Data: 58446
+    - m_Data: 58448
+    - m_Data: 58450
+    - m_Data: 58452
+    - m_Data: 58454
+    - m_Data: 58456
+    - m_Data: 58458
+    - m_Data: 58460
+    - m_Data: 58462
+    - m_Data: 58464
+    - m_Data: 58466
+    - m_Data: 58468
+    - m_Data: 58470
+    - m_Data: 58472
+    - m_Data: 58474
+    - m_Data: 58476
+    - m_Data: 58478
+    - m_Data: 58480
+    - m_Data: 58482
+    - m_Data: 58484
+    - m_Data: 58486
+    - m_Data: 58488
+    - m_Data: 58490
+    - m_Data: 58492
+    - m_Data: 58494
+    - m_Data: 58496
+    - m_Data: 58498
+    - m_Data: 58500
+    - m_Data: 58502
+    - m_Data: 58504
+    - m_Data: 58506
+    - m_Data: 58508
+    - m_Data: 58510
+    - m_Data: 58512
+    - m_Data: 58514
+    - m_Data: 58516
+    - m_Data: 58518
+    - m_Data: 58520
     - m_Data: 1000000000
     - m_Data: 2147483647
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Prefabs
-      m_OriginalName: Prefabs
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -1612,10 +1604,10 @@ MonoBehaviour:
         width: 0
         height: 0
       m_UserData:
-        m_Data: 1000000003
+        m_Data: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 10}
@@ -1634,51 +1626,51 @@ MonoBehaviour:
       m_Data: 185182
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 58602
-    - m_Data: 58604
-    - m_Data: 58606
-    - m_Data: 58608
-    - m_Data: 58610
-    - m_Data: 58612
-    - m_Data: 58614
-    - m_Data: 58616
-    - m_Data: 58618
-    - m_Data: 58620
-    - m_Data: 58622
-    - m_Data: 58624
-    - m_Data: 58626
-    - m_Data: 58628
-    - m_Data: 58630
-    - m_Data: 58632
-    - m_Data: 58634
-    - m_Data: 58636
-    - m_Data: 58638
-    - m_Data: 58640
-    - m_Data: 58642
-    - m_Data: 58644
-    - m_Data: 58646
-    - m_Data: 58648
-    - m_Data: 58650
-    - m_Data: 58652
-    - m_Data: 58654
-    - m_Data: 58656
-    - m_Data: 58658
-    - m_Data: 58660
-    - m_Data: 58662
-    - m_Data: 58664
-    - m_Data: 58666
-    - m_Data: 58668
-    - m_Data: 58670
-    - m_Data: 58672
-    - m_Data: 58674
-    - m_Data: 58676
-    - m_Data: 58678
-    - m_Data: 58680
-    - m_Data: 58682
-    - m_Data: 58684
-    - m_Data: 58686
-    - m_Data: 58688
-    - m_Data: 58690
+    - m_Data: 58432
+    - m_Data: 58434
+    - m_Data: 58436
+    - m_Data: 58438
+    - m_Data: 58440
+    - m_Data: 58442
+    - m_Data: 58444
+    - m_Data: 58446
+    - m_Data: 58448
+    - m_Data: 58450
+    - m_Data: 58452
+    - m_Data: 58454
+    - m_Data: 58456
+    - m_Data: 58458
+    - m_Data: 58460
+    - m_Data: 58462
+    - m_Data: 58464
+    - m_Data: 58466
+    - m_Data: 58468
+    - m_Data: 58470
+    - m_Data: 58472
+    - m_Data: 58474
+    - m_Data: 58476
+    - m_Data: 58478
+    - m_Data: 58480
+    - m_Data: 58482
+    - m_Data: 58484
+    - m_Data: 58486
+    - m_Data: 58488
+    - m_Data: 58490
+    - m_Data: 58492
+    - m_Data: 58494
+    - m_Data: 58496
+    - m_Data: 58498
+    - m_Data: 58500
+    - m_Data: 58502
+    - m_Data: 58504
+    - m_Data: 58506
+    - m_Data: 58508
+    - m_Data: 58510
+    - m_Data: 58512
+    - m_Data: 58514
+    - m_Data: 58516
+    - m_Data: 58518
+    - m_Data: 58520
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1915,7 +1907,8 @@ MonoBehaviour:
     m_DynamicPanelContainerData: []
     m_OverlaysVisible: 1
     m_DynamicPanelBehavior: 0
-  m_ObjectsLockedBeforeSerialization: []
+  m_ObjectsLockedBeforeSerialization:
+  - {fileID: 11400000, guid: 9a3b82917b630ff4e8719aa34343a01b, type: 2}
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
     m_CachedPref: -151
@@ -1926,5 +1919,5 @@ MonoBehaviour:
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
-    m_IsLocked: 0
+    m_IsLocked: 1
   m_PreviewWindow: {fileID: 0}
