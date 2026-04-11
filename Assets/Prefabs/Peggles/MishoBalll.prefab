@@ -90,9 +90,9 @@ MonoBehaviour:
   health: 1
   pegSounClips:
   - {fileID: 8300000, guid: f05ced92df223824bb2bee8ce73a9347, type: 3}
-  - {fileID: 8300000, guid: ec8aaebd962e6c64aac4be25ad11ba27, type: 3}
+  - {fileID: 8300000, guid: b9d3ed23eeb33574496ca48e0ae7026e, type: 3}
+  - {fileID: 8300000, guid: 82014fb69886ea841a2a7a6ecdc0976d, type: 3}
   - {fileID: 8300000, guid: 5e3e55e42724e2f46a1e2bccb7d3fb26, type: 3}
-  - {fileID: 8300000, guid: a98f2e546b4f2a848bc83381d4f02db6, type: 3}
   particles:
   - {fileID: 1375353507806458937, guid: de5fcd9b5d71178499c08fddef7a97e4, type: 3}
   - {fileID: 5748038767810965592, guid: 297bd31ddd809db4388009b5f92a8f84, type: 3}

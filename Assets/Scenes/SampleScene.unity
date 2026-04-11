@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 115288718}
   - component: {fileID: 115288717}
   m_Layer: 5
-  m_Name: LooseText
+  m_Name: LoseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Loose
+  m_text: You Lose
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d61d1535c4a4c424abf902df911c6020, type: 2}
   m_sharedMaterial: {fileID: 1417439953699031023, guid: d61d1535c4a4c424abf902df911c6020, type: 2}
@@ -1081,7 +1081,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3eb0874507098b143987ad93afbe3d65, type: 3}
   - {fileID: 8300000, guid: c2556173b1fe38c4a8505e98b4594944, type: 3}
   - {fileID: 8300000, guid: 8b3f6707211872f41a5e79c87dde59f5, type: 3}
-  - {fileID: 8300000, guid: 0c6638974928f984389601fb3694ee04, type: 3}
   - {fileID: 8300000, guid: 10c094d18f550b94c876af337d6a2b52, type: 3}
   aliens:
   - {fileID: -1335372164229887253, guid: 03b4bf1abc8ef194ba96344d3562c9e1, type: 3}
@@ -4907,7 +4906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &701668847
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8574,7 +8573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1291554985
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10544,7 +10543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DataHolder
   currentLevel: 0
-  LevelsCount: 16
+  LevelsCount: 15
 --- !u!4 &1686111950
 Transform:
   m_ObjectHideFlags: 0
@@ -10691,7 +10690,7 @@ MonoBehaviour:
   timeText: {fileID: 1855065661}
   maxTimeForStar: 30
   winPanelStars: {fileID: 2012990988}
-  levelsCount: 16
+  levelsCount: 15
   levelsLayout: {fileID: 967252586}
   levelButtonPrefab: {fileID: 2097127024388741148, guid: 630b485fecfde6f43997211cc8c01815, type: 3}
   emptyStarSprite: {fileID: -7700239110961326441, guid: 204b6fbc9292dd04894f2fe469a654e4, type: 3}
@@ -10715,7 +10714,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9a3b82917b630ff4e8719aa34343a01b, type: 2}
   - {fileID: 11400000, guid: 7b1e4d2fe28bad544a296f1dba06461c, type: 2}
   - {fileID: 11400000, guid: 500803ba4acaf5f44a04fe1fd05ef518, type: 2}
-  - {fileID: 11400000, guid: b5eede21c0c0a1e42aa533f68a5da4e6, type: 2}
   levelConfirmingPanel: {fileID: 1621427035}
   levelInfoPanel: {fileID: 17304824}
   levelNumberText: {fileID: 356651763}
@@ -11212,7 +11210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1773898127
 RectTransform:
   m_ObjectHideFlags: 0

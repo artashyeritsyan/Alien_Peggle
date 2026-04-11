@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Unity\\Projects\\Peggle_game\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|d:\\unity\\projects\\peggle_game\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\levelsdata\\levelparams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\levelsdata\\levelparams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\dataholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dataholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|d:\\unity\\projects\\peggle_game\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{480573CB-4489-8CFC-4DD5-AC97DBC9A6A7}|Assembly-CSharp.csproj|D:\\Unity\\Projects\\Peggle_game\\assets\\scripts\\pegbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -66,8 +66,7 @@
               "RelativeToolTip": "Assets\\LevelsData\\PegFigures.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T20:42:18.223Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-01T20:42:18.223Z"
             },
             {
               "$type": "Document",
@@ -79,8 +78,7 @@
               "RelativeToolTip": "Assets\\Scripts\\LevelConstructor.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAACcAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T19:58:20.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-16T19:58:20.558Z"
             },
             {
               "$type": "Document",
@@ -92,25 +90,24 @@
               "RelativeToolTip": "Assets\\Scripts\\PegSpawner.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T19:17:36.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-10T19:17:36.737Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAJIBAAAAAAAAAAAkwKUBAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAPIAAAAAAAAAAAAAAOAAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-10T08:11:18.481Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "LevelParams.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\LevelsData\\LevelParams.cs",
               "RelativeDocumentMoniker": "Assets\\LevelsData\\LevelParams.cs",
@@ -118,8 +115,7 @@
               "RelativeToolTip": "Assets\\LevelsData\\LevelParams.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T20:15:08.235Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-02T20:15:08.235Z"
             },
             {
               "$type": "Document",
@@ -131,8 +127,7 @@
               "RelativeToolTip": "Assets\\Scripts\\PegBehaviour.cs",
               "ViewState": "AgIAAHoAAAAAAAAAAAAuwKIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T17:45:50.406Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-10T17:45:50.406Z"
             },
             {
               "$type": "Document",
@@ -160,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DataHolder.cs",
               "DocumentMoniker": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\DataHolder.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DataHolder.cs",
@@ -168,8 +163,7 @@
               "RelativeToolTip": "Assets\\Scripts\\DataHolder.cs",
               "ViewState": "AgIAAG4AAAAAAAAAAIAxwIYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T19:24:36.863Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-16T19:24:36.863Z"
             },
             {
               "$type": "Document",

@@ -222,7 +222,7 @@ public class GameManager : MonoBehaviour
         destroyedBallsCount++;
         isBallInGame = false;
         //CheckIfWin();
-        CheckIsGameLoose();
+        CheckIsGameLose();
     }
 
     public bool CanShoot()
@@ -230,7 +230,7 @@ public class GameManager : MonoBehaviour
         return !isBallInGame;
     }
 
-    void CheckIsGameLoose()
+    void CheckIsGameLose()
     {
         if (shotsLeft <= 0 && destroyedBallsCount >= maxShotsCount)
         {
