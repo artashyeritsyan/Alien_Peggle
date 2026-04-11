@@ -20,8 +20,8 @@ MonoBehaviour:
   - {fileID: 467998787066444958, guid: f840b341931c23e4c806fbe7219d9cba, type: 3}
   - {fileID: 467998787066444958, guid: e412e5bcff638f74a9b719f914028125, type: 3}
   - {fileID: 467998787066444958, guid: 84767288d95681e4c93ec4b8706d358d, type: 3}
-  patternParent: {fileID: 0}
-  pegsCount: 55
-  maxShots: 16
-  shotsForStar: 13
-  timeForStar: 59
+  patternParent: {fileID: 4179729813699684251, guid: 9e4b863b98c1ef940bfde0c2b7f90a87, type: 3}
+  pegsCount: 47
+  maxShots: 14
+  shotsForStar: 11
+  timeForStar: 55

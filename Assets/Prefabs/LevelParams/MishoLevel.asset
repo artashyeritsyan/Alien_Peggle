@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f3b626cdc97e44f8779f13d93aa32a, type: 3}
+  m_Name: MishoLevel
+  m_EditorClassIdentifier: Assembly-CSharp::LevelParams
+  levelId: 16
+  levelBiome: 4
+  levelAlien: 1
+  spawningPeggles:
+  - {fileID: 467998787066444958, guid: a50d20e49bd41364ab83aacf854a939b, type: 3}
+  patternParent: {fileID: 610363204140325337, guid: 17e0346662c9dd742a1f44eb961326be, type: 3}
+  pegsCount: 30
+  maxShots: 22
+  shotsForStar: 18
+  timeForStar: 75

@@ -19,7 +19,7 @@ public class DataHolder : MonoBehaviour
     public int currentLevel;
 
     [Header("Player Score for Levels")]
-    [SerializeField] int LevelsCount = 15;
+    [SerializeField] int LevelsCount = 16;
 
     private bool[] isLevelCompleted;
     private int[] levelsDestroyedPegs;
@@ -72,6 +72,10 @@ public class DataHolder : MonoBehaviour
 
     public bool GetIsLevelCompleted(int level)
     {
+        if (isLevelCompleted.Length - 1 < level)
+        {
+            return false;
+        }
         return isLevelCompleted[level];
     }
 
@@ -87,6 +91,10 @@ public class DataHolder : MonoBehaviour
 
     public int GetLevelDestroyedPegs(int level)
     {
+        if (levelsDestroyedPegs.Length - 1 < level)
+        {
+            return 0;
+        }
         return levelsDestroyedPegs[level];
     }
 
@@ -102,6 +110,10 @@ public class DataHolder : MonoBehaviour
 
     public float GetLevelBestTime(int level)
     {
+        if (levelsBestTimes.Length - 1 < level)
+        {
+            return 0;
+        }
         return levelsBestTimes[level];
     }
 
@@ -117,6 +129,10 @@ public class DataHolder : MonoBehaviour
 
     public int GetLevelBestShot(int level)
     {
+        if (levelsBestShots.Length - 1 < level)
+        {
+            return 0;
+        }
         return levelsBestShots[level];
     }
 

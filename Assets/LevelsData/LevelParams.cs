@@ -8,7 +8,7 @@ public enum Biomes
     Lava,
     Water,
     Rock,
-    Purple
+    Purple,
 }
 
 public enum Aliens

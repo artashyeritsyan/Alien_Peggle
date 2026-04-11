@@ -18,8 +18,8 @@ MonoBehaviour:
   spawningPeggles:
   - {fileID: 467998787066444958, guid: 7089d822abf40414495241656b8f840b, type: 3}
   - {fileID: 467998787066444958, guid: a84d8ae9bd4d794438286acad3d494be, type: 3}
-  patternParent: {fileID: 0}
-  pegsCount: 40
+  patternParent: {fileID: 4179729813699684251, guid: 6ed2c81b85823ec43bcfa9e33d3a5d21, type: 3}
+  pegsCount: 41
   maxShots: 12
   shotsForStar: 8
   timeForStar: 40

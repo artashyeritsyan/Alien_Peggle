@@ -17,10 +17,10 @@ MonoBehaviour:
   levelAlien: 2
   spawningPeggles:
   - {fileID: 467998787066444958, guid: a18fa0c4c82889d4b9e29c43c38043d3, type: 3}
-  - {fileID: 467998787066444958, guid: 9c86ed039ad8c1f4293a0fb1cd984777, type: 3}
   - {fileID: 467998787066444958, guid: 9da6e408909d8d84eb61d2939124cbb7, type: 3}
-  patternParent: {fileID: 7760826466536405033, guid: b5451d09bc68c974aa4d7f4f662faf12, type: 3}
-  pegsCount: 39
+  - {fileID: 467998787066444958, guid: 9325b0bf8334efe439ea256637a88201, type: 3}
+  patternParent: {fileID: 723200882116093437, guid: 2d97cda1cd4629b47bca02db1ff1c474, type: 3}
+  pegsCount: 42
   maxShots: 14
   shotsForStar: 11
   timeForStar: 50
