@@ -91,6 +91,8 @@ MonoBehaviour:
   pegSounClips:
   - {fileID: 8300000, guid: 65deae51ffc337a47ac0f659b8efc708, type: 3}
   - {fileID: 8300000, guid: 20336f4ed6eeaa144b0f578e0a135ab6, type: 3}
+  - {fileID: 8300000, guid: 6eb33cb178079af4a86b597ed77cb814, type: 3}
+  - {fileID: 8300000, guid: afec29a8fb12e9646832381351e64215, type: 3}
   particles:
   - {fileID: 392111996185084988, guid: 70a29aab104210349bab90a726184ea8, type: 3}
   - {fileID: 1375353507806458937, guid: de5fcd9b5d71178499c08fddef7a97e4, type: 3}

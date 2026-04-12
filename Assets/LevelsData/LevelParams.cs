@@ -9,6 +9,7 @@ public enum Biomes
     Water,
     Rock,
     Purple,
+    Secret
 }
 
 public enum Aliens

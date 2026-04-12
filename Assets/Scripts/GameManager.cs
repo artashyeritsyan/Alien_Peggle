@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using TMPro;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Win Panel Parameters")]
     [SerializeField] GameObject winPanelStars;
+    private Vector2 winStarStartScale;
 
 
     [Header("Level Buttons Parameters")]
@@ -107,6 +109,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        winStarStartScale = winPanelStars.transform.GetChild(0).localScale;
+
         PauseGame(true);
 
         levelButtons = new List<GameObject>();
@@ -247,6 +251,7 @@ public class GameManager : MonoBehaviour
 
         UpdateNewScores();
         CheckIfStarRequired(currentLevelIdx);
+        AnimateStars();
         dataHolder.SavePlayerProgress();
 
         Debug.Log("Start fo Win");
@@ -270,7 +275,7 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if (currentLevelIdx == levelsParams.Count - 1)
+        if (currentLevelIdx == levelsParams.Count - 1 || currentLevelIdx == 15 && !isSecretLevelUnlocked)
         {
             return;
         }
@@ -454,7 +459,7 @@ public class GameManager : MonoBehaviour
         Transform stars = levelButtons[level].transform.GetChild(0).transform;
         winPanelStars.transform.GetChild(0).GetComponent<Image>().sprite = stars.GetChild(0).GetComponent<Image>().sprite;
         winPanelStars.transform.GetChild(1).GetComponent<Image>().sprite = stars.GetChild(1).GetComponent<Image>().sprite;
-        levelInfoStars.transform.GetChild(2).GetComponent<Image>().sprite = stars.GetChild(2).GetComponent<Image>().sprite;
+        winPanelStars.transform.GetChild(2).GetComponent<Image>().sprite = stars.GetChild(2).GetComponent<Image>().sprite;
     }
 
     // Adding star to level, and second int for choosing is it for Win for Time or Shots
@@ -467,6 +472,23 @@ public class GameManager : MonoBehaviour
         {
             stars.GetChild(starIdx).GetComponent<Image>().sprite = filledStarSprite;
         }
+    }
+
+    void AnimateStars()
+    {
+
+        for (int i = 0; i < 3; i++)
+        {
+            Transform childObj = winPanelStars.transform.GetChild(i);
+            childObj.DOKill();
+            if (childObj.GetComponent<Image>().sprite == filledStarSprite)
+            {
+                childObj.localScale *= 0.05f;
+                childObj.DOScale(winStarStartScale, 0.5f).SetEase(Ease.OutQuad)
+                    .OnComplete(() => childObj.DOScale(winStarStartScale * 0.7f, 0.6f).SetEase(Ease.InOutQuad).SetLoops(-1, LoopType.Yoyo));
+            }
+        }
+
     }
 
     // This Function Can be called only from outside, And only from button!
@@ -590,6 +612,33 @@ public class GameManager : MonoBehaviour
             menuButton.sprite = musicONSprite;
             BgAudioSource.volume = 1;
         }
+    }
+
+    bool isSecretLevelUnlocked = false;
+
+    public void ShowSecretLevel()
+    {
+        if (isSecretLevelUnlocked) return;
+
+        levelsCount = 16;
+
+        int levelNumber = 15;
+
+        GameObject newButton = Instantiate(levelButtonPrefab, levelsLayout);
+        newButton.name = "Level_" + (levelNumber + 1).ToString();
+        newButton.GetComponentInChildren<TMP_Text>().text = (levelNumber + 1).ToString();
+
+        newButton.GetComponent<Button>().onClick.AddListener(() => OpenSecretLevel());
+        newButton.GetComponent<Button>().onClick.AddListener(() => PlayClickSound());
+
+        levelButtons.Add(newButton);
+        isSecretLevelUnlocked = true;
+    }
+
+    public void OpenSecretLevel()
+    {
+        Debug.Log("Secret level unlocked");
+        StartGame(15);
     }
 
     public bool GetIsSoundOn()

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: MishoLevel
   m_EditorClassIdentifier: Assembly-CSharp::LevelParams
   levelId: 16
-  levelBiome: 4
-  levelAlien: 1
+  levelBiome: 5
+  levelAlien: 3
   spawningPeggles:
   - {fileID: 467998787066444958, guid: a50d20e49bd41364ab83aacf854a939b, type: 3}
-  patternParent: {fileID: 610363204140325337, guid: 17e0346662c9dd742a1f44eb961326be, type: 3}
-  pegsCount: 30
+  patternParent: {fileID: 4179729813699684251, guid: a973d676c2e96ee41b0a20a0d1dc2401, type: 3}
+  pegsCount: 46
   maxShots: 22
   shotsForStar: 18
   timeForStar: 75
