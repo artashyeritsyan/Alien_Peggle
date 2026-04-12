@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +28,9 @@ public class GameManager : MonoBehaviour
     public float maxTimeForStar;  // TODO: need to get roundTIme from every round (and make private). But now gets from inspector
     private float currentTime;
 
+    [SerializeField] GameObject overlayShotsStar;
+    [SerializeField] GameObject overlayTimeStar;
+
     [Header("Win Panel Parameters")]
     [SerializeField] GameObject winPanelStars;
     private Vector2 winStarStartScale;
@@ -44,8 +48,8 @@ public class GameManager : MonoBehaviour
     // ====================== UI Part End ===========================
 
 
-    [SerializeField] int maxShotsCount = 5;
-    private int shotsLeft;
+    [SerializeField] int maxShotsCount = 12;
+    private int shots;
     private int destroyedBallsCount;
 
     // rewrite this part
@@ -125,7 +129,7 @@ public class GameManager : MonoBehaviour
 
         destroyedBallsCount = 0;
         isBallInGame = false;
-        shotsLeft = maxShotsCount;
+        shots = 0;
         UpdateScoreText();
         UpdateShotsText();
 
@@ -159,9 +163,9 @@ public class GameManager : MonoBehaviour
 
     void BallShot()
     {
-        if (shotsLeft > 0)
+        if (shots < maxShotsCount)
         {
-            shotsLeft--;
+            shots++;
         }
         isBallInGame = true;
         UpdateShotsText();
@@ -169,7 +173,28 @@ public class GameManager : MonoBehaviour
 
     void UpdateShotsText()
     {
-        shotsText.text = "Shots: " + shotsLeft + "/" + maxShotsCount;
+        Transform Star = overlayShotsStar.transform;
+
+        if (shots <= levelsParams[currentLevelIdx].GetShotsForStar())
+        {
+            shotsText.text = "Shots: " + shots + "/" + levelsParams[currentLevelIdx].GetShotsForStar();
+            overlayShotsStar.GetComponent<Image>().sprite = filledStarSprite;
+
+            if (!DOTween.IsTweening(Star))
+            {
+                Star.DOScale(Star.localScale * 0.8f, 1f).SetEase(Ease.InOutQuad).SetLoops(-1, LoopType.Yoyo);
+            }
+        }
+        else
+        {
+            shotsText.text = "Shots: " + shots + "/" + maxShotsCount;
+            overlayShotsStar.GetComponent<Image>().sprite = emptyStarSprite;
+
+            if (DOTween.IsTweening(Star))
+            {
+                Star.DOKill();
+            }
+        }
     }
 
     void CheckIfWin()
@@ -205,6 +230,24 @@ public class GameManager : MonoBehaviour
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
+        Transform Star = overlayTimeStar.transform;
+        if (currentTime < levelsParams[currentLevelIdx].GetTimeForStar())
+        {
+            overlayTimeStar.GetComponent<Image>().sprite = filledStarSprite;
+            if (!DOTween.IsTweening(Star))
+            {
+                Star.DOScale(Star.localScale * 0.8f, 1f).SetEase(Ease.InOutQuad).SetLoops(-1, LoopType.Yoyo);
+            }
+        }
+        else
+        {
+            overlayTimeStar.GetComponent<Image>().sprite = emptyStarSprite;
+            if (DOTween.IsTweening(Star))
+            {
+                Star.DOKill();
+            }
+        }
+
         //float time = currentTime / maxTimeForStar;
         //timeBar.color = Color.Lerp(Color.red, new Color32(22, 187, 121, 255), t);
     }
@@ -236,7 +279,7 @@ public class GameManager : MonoBehaviour
 
     void CheckIsGameLose()
     {
-        if (shotsLeft <= 0 && destroyedBallsCount >= maxShotsCount)
+        if (shots >= maxShotsCount && destroyedBallsCount >= maxShotsCount)
         {
             if (isGamePaused) { return; }
             GameOver();
@@ -300,7 +343,7 @@ public class GameManager : MonoBehaviour
         //maxPegsCount = spawner.GetPegsCount();
         destroyedPegsCount = 0;
 
-        shotsLeft = maxShotsCount;
+        shots = 0;
         destroyedBallsCount = 0;
         isBallInGame = false;
 
@@ -317,9 +360,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public int GetLeftShotsCount()
+    public int GetShotsLeft()
     {
-        return shotsLeft;
+        return maxShotsCount - shots;
     }
 
     public void PauseGame(bool isPaused)
@@ -403,7 +446,7 @@ public class GameManager : MonoBehaviour
         dataHolder.SetLevelCompleted(currentLevelIdx);
         dataHolder.SetNewDestroyedPegs(currentLevelIdx, destroyedPegsCount);
         dataHolder.SetNewBestTime(currentLevelIdx, currentTime);
-        dataHolder.SetNewBestShot(currentLevelIdx, maxShotsCount - shotsLeft);
+        dataHolder.SetNewBestShot(currentLevelIdx, shots);
     }
 
     void UpdateLevelsStars()
@@ -447,10 +490,8 @@ public class GameManager : MonoBehaviour
             AddStar(level, 1);
         }
 
-        if (maxShotsCount - shotsLeft <= levelsParams[level].GetShotsForStar())
+        if (shots <= levelsParams[level].GetShotsForStar())
         {
-            Debug.Log("Start fo SHots");
-            Debug.Log(maxShotsCount + " - " + shotsLeft + " <= " + levelsParams[level].GetShotsForStar());
             // 2 stands for StarForShot
             AddStar(level, 2);
         }

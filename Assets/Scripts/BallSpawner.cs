@@ -33,7 +33,7 @@ public class BallSpawner : MonoBehaviour
             pivot.rotation = Quaternion.Euler(0, 0, -Quaternion.LookRotation(pos - transform.position, Vector3.back).eulerAngles.z);
             if (Mouse.current.leftButton.wasPressedThisFrame && GameManager.instance.CanShoot())
             {
-                if (GameManager.instance.GetLeftShotsCount() > 0)
+                if (GameManager.instance.GetShotsLeft() > 0)
                 {
                     PlayRandomSound();
                     pos.z = 0;
