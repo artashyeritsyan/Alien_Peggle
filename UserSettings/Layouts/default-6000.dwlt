@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 868.8
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -643,7 +643,7 @@ MonoBehaviour:
       height: 902.6903
     m_MinimalGUI: 1
   m_defaultScale: 0.60286456
-  m_LastWindowPixelSize: {x: 1157.5, y: 706.5}
+  m_LastWindowPixelSize: {x: 926, y: 565.2}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -697,14 +697,6 @@ MonoBehaviour:
         m_Data: 0
       m_ExpandedIDs:
       - m_Data: -1318
-      - m_Data: 49178
-      - m_Data: 49420
-      - m_Data: 49500
-      - m_Data: 49528
-      - m_Data: 49770
-      - m_Data: 49922
-      - m_Data: 49946
-      - m_Data: 50048
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1339,9 +1331,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 1283.3387, y: 1047.6221, z: -2.5129416}
+    m_Target: {x: 1283.4033, y: 1047.3011, z: -2.5257213}
     speed: 2
-    m_Value: {x: 1283.3387, y: 1047.6221, z: -2.5129416}
+    m_Value: {x: 1283.4033, y: 1047.3011, z: -2.5257213}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1391,9 +1383,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 486.469
+    m_Target: 487.74695
     speed: 2
-    m_Value: 486.469
+    m_Value: 487.74695
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1555,6 +1547,16 @@ MonoBehaviour:
       m_Data: 78974
     m_ExpandedIDs:
     - m_Data: 0
+    - m_Data: 78642
+    - m_Data: 78644
+    - m_Data: 78646
+    - m_Data: 78648
+    - m_Data: 78650
+    - m_Data: 78652
+    - m_Data: 78654
+    - m_Data: 78656
+    - m_Data: 78658
+    - m_Data: 78660
     - m_Data: 78662
     - m_Data: 78664
     - m_Data: 78666
@@ -1593,18 +1595,6 @@ MonoBehaviour:
     - m_Data: 78732
     - m_Data: 78734
     - m_Data: 78736
-    - m_Data: 78738
-    - m_Data: 78740
-    - m_Data: 78742
-    - m_Data: 78744
-    - m_Data: 78746
-    - m_Data: 78748
-    - m_Data: 78750
-    - m_Data: 78752
-    - m_Data: 78754
-    - m_Data: 78756
-    - m_Data: 1000000000
-    - m_Data: 2147483647
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1638,6 +1628,16 @@ MonoBehaviour:
       m_Data: 185182
     m_ExpandedIDs:
     - m_Data: 0
+    - m_Data: 78642
+    - m_Data: 78644
+    - m_Data: 78646
+    - m_Data: 78648
+    - m_Data: 78650
+    - m_Data: 78652
+    - m_Data: 78654
+    - m_Data: 78656
+    - m_Data: 78658
+    - m_Data: 78660
     - m_Data: 78662
     - m_Data: 78664
     - m_Data: 78666
@@ -1676,16 +1676,6 @@ MonoBehaviour:
     - m_Data: 78732
     - m_Data: 78734
     - m_Data: 78736
-    - m_Data: 78738
-    - m_Data: 78740
-    - m_Data: 78742
-    - m_Data: 78744
-    - m_Data: 78746
-    - m_Data: 78748
-    - m_Data: 78750
-    - m_Data: 78752
-    - m_Data: 78754
-    - m_Data: 78756
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
