@@ -19,6 +19,7 @@ MonoBehaviour:
   - {fileID: 467998787066444958, guid: 0ea416a9681490549ab820a1f160e906, type: 3}
   - {fileID: 467998787066444958, guid: 84767288d95681e4c93ec4b8706d358d, type: 3}
   - {fileID: 467998787066444958, guid: e270bc1eb87a9b54ebf67112dadc7964, type: 3}
+  - {fileID: 467998787066444958, guid: b93ac212cd815f340982fd0c0a5debe6, type: 3}
   patternParent: {fileID: 4179729813699684251, guid: a48bb6d5fc4cacf4daf8d294bb046a6c, type: 3}
   pegsCount: 57
   maxShots: 15

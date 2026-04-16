@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameWinPanel;
     [SerializeField] GameObject menuPanel;
     [SerializeField] GameObject levelsPanel;
+    [SerializeField] GameObject tutorialPanel;
 
     [Header("Overlay texts")]
     [SerializeField] TextMeshProUGUI scoreText;
@@ -168,7 +169,8 @@ public class GameManager : MonoBehaviour
 
     void StartTutorialLevel()
     {
-
+        StartGame(0);
+        tutorialPanel.SetActive(true);
     }
 
     void BallShot()
@@ -420,13 +422,13 @@ public class GameManager : MonoBehaviour
 
     public void CreateLevelButtons()
     {
-        for (int i = 0; i < levelsCount; ++i)
+        for (int i = 1; i < levelsCount; ++i)
         {
             int levelNumber = i;
 
             GameObject newButton = Instantiate(levelButtonPrefab, levelsLayout);
-            newButton.name = "Level_" + (levelNumber + 1).ToString();
-            newButton.GetComponentInChildren<TMP_Text>().text = (levelNumber + 1).ToString();
+            newButton.name = "Level_" + (levelNumber).ToString();
+            newButton.GetComponentInChildren<TMP_Text>().text = (levelNumber).ToString();
 
             newButton.GetComponent<Button>().onClick.AddListener(() => SetChoosenLevelIdx(levelNumber));
             newButton.GetComponent<Button>().onClick.AddListener(() => PlayClickSound());

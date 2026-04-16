@@ -88,7 +88,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAvwIQAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAJ8BAAAAAAAAAAD4v6gBAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-10T08:11:18.481Z",
               "EditorCaption": ""
@@ -149,7 +149,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\DataHolder.cs",
               "ToolTip": "D:\\Unity\\Projects\\Peggle_game\\Assets\\Scripts\\DataHolder.cs",
               "RelativeToolTip": "Assets\\Scripts\\DataHolder.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAlwEgAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAEwI0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-16T19:24:36.863Z",
               "EditorCaption": ""
@@ -164,8 +164,7 @@
               "RelativeToolTip": "Assets\\Scripts\\BallSpawner.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAAwCMAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T19:34:57.104Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T19:34:57.104Z"
             },
             {
               "$type": "Document",
