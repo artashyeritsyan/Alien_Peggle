@@ -113,9 +113,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        winStarStartScale = winPanelStars.transform.GetChild(0).localScale;
-
         PauseGame(true);
+
+        winStarStartScale = winPanelStars.transform.GetChild(0).localScale;
 
         levelButtons = new List<GameObject>();
         // TODO: Create DataHolder script to save all info about levels
@@ -135,6 +135,11 @@ public class GameManager : MonoBehaviour
 
         isMusicOn = true;
         isSoundOn = true;
+
+        if (!DataHolder.instance.GetIsTutorialCompleted())
+        {
+            StartTutorialLevel();
+        }
     }
 
     private void Update()
@@ -159,6 +164,11 @@ public class GameManager : MonoBehaviour
         Ball.OnPointCollected -= AddScore;
         Ball.OnBallDestroyed -= BallDestroyed;
         BallSpawner.OnBallShot -= BallShot;
+    }
+
+    void StartTutorialLevel()
+    {
+
     }
 
     void BallShot()

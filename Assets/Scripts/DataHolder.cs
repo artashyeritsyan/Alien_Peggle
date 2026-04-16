@@ -17,7 +17,7 @@ public class DataHolder : MonoBehaviour
     public static DataHolder instance;
 
     public int currentLevel;
-
+    
     [Header("Player Score for Levels")]
     [SerializeField] int LevelsCount = 16;
 
@@ -25,6 +25,8 @@ public class DataHolder : MonoBehaviour
     private int[] levelsDestroyedPegs;
     private int[] levelsBestShots;
     private float[] levelsBestTimes;
+
+    private bool isTutorialCompleted;
 
     private string savePath;
 
@@ -41,6 +43,7 @@ public class DataHolder : MonoBehaviour
 
         savePath = Application.persistentDataPath + "/player_progress.json";
 
+        isTutorialCompleted = false;
         InitArrays();
         LoadPlayerProgress();
     }
@@ -136,6 +139,18 @@ public class DataHolder : MonoBehaviour
         return levelsBestShots[level];
     }
 
+    public void SetTutorialCompleted()
+    {
+        isTutorialCompleted = true;
+
+        PlayerPrefs.SetInt("isTutoriaCompleted", 1);
+    }
+
+    public bool GetIsTutorialCompleted()
+    {
+        return isTutorialCompleted;
+    }
+
     public void SavePlayerProgress()
     {
         PlayerProgressData data = new PlayerProgressData
@@ -157,6 +172,11 @@ public class DataHolder : MonoBehaviour
 
     public void LoadPlayerProgress()
     {
+        if(PlayerPrefs.GetInt("isTutoriaCompleted", 0) != 0)
+        {
+            isTutorialCompleted = true;
+        }
+
         if (File.Exists(savePath))
         {
             string json = File.ReadAllText(savePath);
