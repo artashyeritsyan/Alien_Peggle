@@ -330,7 +330,7 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if (currentLevelIdx == levelsParams.Count - 1 || currentLevelIdx == 15 && !isSecretLevelUnlocked)
+        if (currentLevelIdx == levelsParams.Count - 1 || currentLevelIdx == 16 && !isSecretLevelUnlocked)
         {
             return;
         }
@@ -544,11 +544,10 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // This Function Can be called only from outside, And only from button!
     void OpenLevelConfirmingPanel(int level)
     {
         levelConfirmingPanel.SetActive(true);
-        levelNumberText.text = "Level" + (level + 1).ToString();
+        levelNumberText.text = "Level" + (level+1).ToString();
         levelStartButton.GetComponent<Button>().onClick.AddListener(() => CallLevel(level));
 
 
@@ -576,12 +575,13 @@ public class GameManager : MonoBehaviour
         levelInfoStars.transform.GetChild(2).GetComponent<Image>().sprite = stars.GetChild(2).GetComponent<Image>().sprite;
     }
 
+    // This Function Can be called only from outside, And only from button!
     public void SetChoosenLevelIdx(int level)
     {
         Debug.Log("Choosing level " + level);
         currentLevelIdx = level;
 
-        OpenLevelConfirmingPanel(level);
+        OpenLevelConfirmingPanel(level-1);
     }
 
     public void CallLevel(int level)
