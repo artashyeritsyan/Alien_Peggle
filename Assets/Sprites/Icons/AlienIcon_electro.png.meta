@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ef6f1db5355cd8840bf57aa599abaab5
+guid: b9a1ea31dd638224fbd072b6f0155dae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4750761433519615375
-    second: Cursor_0
+      213: -2940186269827650382
+    second: AlienIcon_electro_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cursor_0
+      name: AlienIcon_electro_0
       rect:
         serializedVersion: 2
-        x: 157
-        y: 42
-        width: 1105
-        height: 1482
+        x: 0
+        y: 0
+        width: 1254
+        height: 1254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 172107695a7e11eb0800000000000000
-      internalID: -4750761433519615375
+      spriteID: 2bc21755a2c5237d0800000000000000
+      internalID: -2940186269827650382
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cursor_0: -4750761433519615375
+      AlienIcon_electro_0: -2940186269827650382
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

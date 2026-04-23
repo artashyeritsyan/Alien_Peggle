@@ -306,7 +306,6 @@ public class GameManager : MonoBehaviour
 
     void GameWin()
     {
-        if (currentLevelIdx == 0) dataHolder.SetTutorialCompleted();
 
         DisableAllPanels();
         gameWinPanel.SetActive(true);
@@ -315,6 +314,8 @@ public class GameManager : MonoBehaviour
         UpdateNewScores();
         CheckIfStarRequired(currentLevelIdx);
         AnimateStars();
+
+        if (currentLevelIdx == 0) dataHolder.SetTutorialCompleted();
         dataHolder.SavePlayerProgress();
 
         Debug.Log("Start fo Win");
@@ -344,15 +345,18 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            //if (dataHolder.GetIsTutorialCompleted())
+            //{
+            //}
             currentLevelIdx++;
-            StartGame(currentLevelIdx + 1);
+            StartGame(currentLevelIdx);
         }
     }
 
     public void Restart()
     {
         // No different logic yet
-        StartGame(currentLevelIdx + 1);
+        StartGame(currentLevelIdx);
     }
 
     public void StartGame(int levelIndex)
@@ -430,7 +434,7 @@ public class GameManager : MonoBehaviour
 
     public void CreateLevelButtons()
     {
-        for (int i = 1; i < levelsCount; ++i)
+        for (int i = 1; i <= levelsCount; ++i)
         {
             int levelNumber = i;
 
@@ -462,11 +466,13 @@ public class GameManager : MonoBehaviour
 
     void UpdateNewScores()
     {
-        Debug.Log("Current Level" + currentLevelIdx);
-        dataHolder.SetLevelCompleted(currentLevelIdx);
-        dataHolder.SetNewDestroyedPegs(currentLevelIdx, destroyedPegsCount);
-        dataHolder.SetNewBestTime(currentLevelIdx, currentTime);
-        dataHolder.SetNewBestShot(currentLevelIdx, shots);
+        if (!dataHolder.GetIsTutorialCompleted()) return;
+
+        Debug.Log("Current Level " + currentLevelIdx + " - 1 ");
+        dataHolder.SetLevelCompleted(currentLevelIdx - 1);
+        dataHolder.SetNewDestroyedPegs(currentLevelIdx - 1, destroyedPegsCount);
+        dataHolder.SetNewBestTime(currentLevelIdx - 1, currentTime);
+        dataHolder.SetNewBestShot(currentLevelIdx - 1, shots);
     }
 
     void UpdateLevelsStars()
@@ -479,14 +485,14 @@ public class GameManager : MonoBehaviour
                 AddStar(i, 0);
             }
 
-            if (dataHolder.GetLevelBestTime(i) > 0 && dataHolder.GetLevelBestTime(i) <= levelsParams[i].GetTimeForStar())
+            if (dataHolder.GetLevelBestTime(i) > 0 && dataHolder.GetLevelBestTime(i) <= levelsParams[i+1].GetTimeForStar())
             {
                 Debug.Log("Start fo Time");
                 // 1 stands for StarForTime
                 AddStar(i, 1);
             }
 
-            if (dataHolder.GetLevelBestShot(i) > 0 &&  dataHolder.GetLevelBestShot(i) <= levelsParams[i].GetShotsForStar())
+            if (dataHolder.GetLevelBestShot(i) > 0 &&  dataHolder.GetLevelBestShot(i) <= levelsParams[i+1].GetShotsForStar())
             {
                 Debug.Log("Start fo SHots");
                 // 2 stands for StarForShot
@@ -518,9 +524,16 @@ public class GameManager : MonoBehaviour
 
         // Setting the Win panel start. // TODO:: Later make it another function
         Transform stars = levelButtons[levelIndex].transform.GetChild(0).transform;
-        winPanelStars.transform.GetChild(0).GetComponent<Image>().sprite = stars.GetChild(0).GetComponent<Image>().sprite;
-        winPanelStars.transform.GetChild(1).GetComponent<Image>().sprite = stars.GetChild(1).GetComponent<Image>().sprite;
-        winPanelStars.transform.GetChild(2).GetComponent<Image>().sprite = stars.GetChild(2).GetComponent<Image>().sprite;
+        winPanelStars.transform.GetChild(1).GetComponent<Image>().sprite = filledStarSprite;
+        winPanelStars.transform.GetChild(2).GetComponent<Image>().sprite = filledStarSprite;
+        winPanelStars.transform.GetChild(0).GetComponent<Image>().sprite = filledStarSprite;
+
+        if (dataHolder.GetIsTutorialCompleted())
+        {
+            winPanelStars.transform.GetChild(0).GetComponent<Image>().sprite = stars.GetChild(0).GetComponent<Image>().sprite;
+            winPanelStars.transform.GetChild(1).GetComponent<Image>().sprite = stars.GetChild(1).GetComponent<Image>().sprite;
+            winPanelStars.transform.GetChild(2).GetComponent<Image>().sprite = stars.GetChild(2).GetComponent<Image>().sprite;
+        }
     }
 
     // Adding star to level, and second int for choosing is it for Win for Time or Shots
@@ -587,7 +600,7 @@ public class GameManager : MonoBehaviour
     public void SetChoosenLevelIdx(int level)
     {
         Debug.Log("Choosing level " + level);
-        currentLevelIdx = level - 1;
+        currentLevelIdx = level;
 
         OpenLevelConfirmingPanel(level);
     }
@@ -698,7 +711,7 @@ public class GameManager : MonoBehaviour
     public void OpenSecretLevel()
     {
         Debug.Log("Secret level unlocked");
-        StartGame(15);
+        StartGame(16);
     }
 
     public void SkipTutorial()

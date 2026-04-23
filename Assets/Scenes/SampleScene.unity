@@ -11132,8 +11132,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -268.68237, y: -61.50757}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: -341.28058, y: -100}
+  m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &1691718288
 Animation:
@@ -11255,7 +11255,7 @@ MonoBehaviour:
   overlayShotsStar: {fileID: 199617081}
   overlayTimeStar: {fileID: 34560609}
   winPanelStars: {fileID: 2012990988}
-  levelsCount: 16
+  levelsCount: 15
   levelsLayout: {fileID: 967252586}
   levelButtonPrefab: {fileID: 2097127024388741148, guid: 630b485fecfde6f43997211cc8c01815, type: 3}
   emptyStarSprite: {fileID: -7700239110961326441, guid: 204b6fbc9292dd04894f2fe469a654e4, type: 3}
