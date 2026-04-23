@@ -20,6 +20,7 @@ public class DataHolder : MonoBehaviour
     
     [Header("Player Score for Levels")]
     [SerializeField] int LevelsCount = 16;
+    public bool resetTutorial = false;
 
     private bool[] isLevelCompleted;
     private int[] levelsDestroyedPegs;
@@ -42,6 +43,11 @@ public class DataHolder : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         savePath = Application.persistentDataPath + "/player_progress.json";
+
+        if (resetTutorial)
+        {
+            PlayerPrefs.SetInt("isTutoriaCompleted", 0);
+        }
 
         isTutorialCompleted = false;
         InitArrays();
@@ -67,7 +73,6 @@ public class DataHolder : MonoBehaviour
     // =========================
     // GETTERS / SETTERS
     // =========================
-
     public void SetLevelCompleted(int level)
     {
         isLevelCompleted[level] = true;

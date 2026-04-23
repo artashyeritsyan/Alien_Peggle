@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject menuPanel;
     [SerializeField] GameObject levelsPanel;
     [SerializeField] GameObject tutorialPanel;
+    [SerializeField] GameObject tutorialMouseClick;
+
 
     [Header("Overlay texts")]
     [SerializeField] TextMeshProUGUI scoreText;
@@ -171,6 +173,7 @@ public class GameManager : MonoBehaviour
     {
         StartGame(0);
         tutorialPanel.SetActive(true);
+        tutorialMouseClick.SetActive(true);
     }
 
     void BallShot()
@@ -233,6 +236,7 @@ public class GameManager : MonoBehaviour
         menuPanel.SetActive(false);
         levelsPanel.SetActive(false);
         levelConfirmingPanel.SetActive(false);
+        tutorialPanel.SetActive(false);
     }
 
     void UpdateTimerUI()
@@ -259,9 +263,6 @@ public class GameManager : MonoBehaviour
                 Star.DOKill();
             }
         }
-
-        //float time = currentTime / maxTimeForStar;
-        //timeBar.color = Color.Lerp(Color.red, new Color32(22, 187, 121, 255), t);
     }
 
     void UpdateScoreText()
@@ -271,6 +272,11 @@ public class GameManager : MonoBehaviour
 
     void AddScore()
     {
+        if (!dataHolder.GetIsTutorialCompleted() && tutorialMouseClick)
+        {
+            tutorialMouseClick.SetActive(false);
+        }
+       
         ++destroyedPegsCount;
         UpdateScoreText();
         CheckIfWin();
@@ -300,6 +306,8 @@ public class GameManager : MonoBehaviour
 
     void GameWin()
     {
+        if (currentLevelIdx == 0) dataHolder.SetTutorialCompleted();
+
         DisableAllPanels();
         gameWinPanel.SetActive(true);
         totalScoreText.text = "Total Score: " + destroyedPegsCount + "/" + maxPegsCount;
@@ -330,21 +338,21 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if (currentLevelIdx == levelsParams.Count - 1 || currentLevelIdx == 16 && !isSecretLevelUnlocked)
+        if (currentLevelIdx == levelsParams.Count - 1 || currentLevelIdx == 15 && !isSecretLevelUnlocked)
         {
             return;
         }
         else
         {
             currentLevelIdx++;
-            StartGame(currentLevelIdx);
+            StartGame(currentLevelIdx + 1);
         }
     }
 
     public void Restart()
     {
         // No different logic yet
-        StartGame(currentLevelIdx);
+        StartGame(currentLevelIdx + 1);
     }
 
     public void StartGame(int levelIndex)
@@ -487,29 +495,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void CheckIfStarRequired(int level)
+    void CheckIfStarRequired(int levelIndex)
     {
-        if (dataHolder.GetIsLevelCompleted(level))
+        int level = levelIndex + 1;
+        if (dataHolder.GetIsLevelCompleted(levelIndex))
         {
-            AddStar(currentLevelIdx, 0);
+            AddStar(levelIndex, 0);
         }
 
-
-        if (dataHolder.GetLevelBestTime(level) <= levelsParams[level].GetTimeForStar())
+        if (dataHolder.GetLevelBestTime(levelIndex) <= levelsParams[level].GetTimeForStar())
         {
             Debug.Log("Start fo TIme");
             // 1 stands for StarForTime
-            AddStar(level, 1);
+            AddStar(levelIndex, 1);
         }
 
         if (shots <= levelsParams[level].GetShotsForStar())
         {
             // 2 stands for StarForShot
-            AddStar(level, 2);
+            AddStar(levelIndex, 2);
         }
 
         // Setting the Win panel start. // TODO:: Later make it another function
-        Transform stars = levelButtons[level].transform.GetChild(0).transform;
+        Transform stars = levelButtons[levelIndex].transform.GetChild(0).transform;
         winPanelStars.transform.GetChild(0).GetComponent<Image>().sprite = stars.GetChild(0).GetComponent<Image>().sprite;
         winPanelStars.transform.GetChild(1).GetComponent<Image>().sprite = stars.GetChild(1).GetComponent<Image>().sprite;
         winPanelStars.transform.GetChild(2).GetComponent<Image>().sprite = stars.GetChild(2).GetComponent<Image>().sprite;
@@ -529,7 +537,6 @@ public class GameManager : MonoBehaviour
 
     void AnimateStars()
     {
-
         for (int i = 0; i < 3; i++)
         {
             Transform childObj = winPanelStars.transform.GetChild(i);
@@ -547,18 +554,19 @@ public class GameManager : MonoBehaviour
     void OpenLevelConfirmingPanel(int level)
     {
         levelConfirmingPanel.SetActive(true);
-        levelNumberText.text = "Level" + (level+1).ToString();
+        levelNumberText.text = "Level" + (level).ToString();
         levelStartButton.GetComponent<Button>().onClick.AddListener(() => CallLevel(level));
 
+        int levelIndex = level - 1;
 
-        pegsCountInfoText.text = "Pegs:  " + (dataHolder.GetLevelDestroyedPegs(level) < 0 ? 0 : dataHolder.GetLevelDestroyedPegs(level)).ToString()
+        pegsCountInfoText.text = "Pegs:  " + (dataHolder.GetLevelDestroyedPegs(levelIndex) < 0 ? 0 : dataHolder.GetLevelDestroyedPegs(levelIndex)).ToString()
             + "/" + levelsParams[level].GetPegsCount().ToString();
-        shotsInfoText.text = "Best Shots:  " + (dataHolder.GetLevelBestShot(level) < 0 ? 0 : dataHolder.GetLevelBestShot(level)).ToString();
+        shotsInfoText.text = "Best Shots:  " + (dataHolder.GetLevelBestShot(levelIndex) < 0 ? 0 : dataHolder.GetLevelBestShot(levelIndex)).ToString();
         shotsForStarText.text = "Target Shots:  " + levelsParams[level].GetShotsForStar().ToString();
 
         //Time prints part
         {
-            float bestTime = dataHolder.GetLevelBestTime(level);
+            float bestTime = dataHolder.GetLevelBestTime(levelIndex);
             if (bestTime < 0)
                 bestTime = 0;
 
@@ -569,7 +577,7 @@ public class GameManager : MonoBehaviour
         }
 
         // TODO: Refactor this logic later
-        Transform stars = levelButtons[level].transform.GetChild(0).transform;
+        Transform stars = levelButtons[levelIndex].transform.GetChild(0).transform;
         levelInfoStars.transform.GetChild(0).GetComponent<Image>().sprite = stars.GetChild(0).GetComponent<Image>().sprite;
         levelInfoStars.transform.GetChild(1).GetComponent<Image>().sprite = stars.GetChild(1).GetComponent<Image>().sprite;
         levelInfoStars.transform.GetChild(2).GetComponent<Image>().sprite = stars.GetChild(2).GetComponent<Image>().sprite;
@@ -579,9 +587,9 @@ public class GameManager : MonoBehaviour
     public void SetChoosenLevelIdx(int level)
     {
         Debug.Log("Choosing level " + level);
-        currentLevelIdx = level;
+        currentLevelIdx = level - 1;
 
-        OpenLevelConfirmingPanel(level-1);
+        OpenLevelConfirmingPanel(level);
     }
 
     public void CallLevel(int level)
@@ -617,7 +625,6 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < levelButtons.Count; i++)
         {
-
             Transform stars = levelButtons[i].transform.GetChild(0).transform;
             for (int j = 0; j < stars.childCount; ++j)
             {
@@ -692,6 +699,12 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Secret level unlocked");
         StartGame(15);
+    }
+
+    public void SkipTutorial()
+    {
+        OpenMenuPanel();
+        dataHolder.SetTutorialCompleted();
     }
 
     public bool GetIsSoundOn()
