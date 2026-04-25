@@ -312,7 +312,7 @@ public class GameManager : MonoBehaviour
         totalScoreText.text = "Total Score: " + destroyedPegsCount + "/" + maxPegsCount;
 
         UpdateNewScores();
-        CheckIfStarRequired(currentLevelIdx);
+        CheckIfStarRequired(currentLevelIdx - 1);
         AnimateStars();
 
         if (currentLevelIdx == 0) dataHolder.SetTutorialCompleted();
@@ -349,7 +349,7 @@ public class GameManager : MonoBehaviour
             //{
             //}
             currentLevelIdx++;
-            StartGame(currentLevelIdx);
+            StartGame(currentLevelIdx); 
         }
     }
 
@@ -466,7 +466,7 @@ public class GameManager : MonoBehaviour
 
     void UpdateNewScores()
     {
-        if (!dataHolder.GetIsTutorialCompleted()) return;
+        if (currentLevelIdx == 0) return;
 
         Debug.Log("Current Level " + currentLevelIdx + " - 1 ");
         dataHolder.SetLevelCompleted(currentLevelIdx - 1);
@@ -479,7 +479,6 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < levelButtons.Count; ++i)
         {
-
             if (dataHolder.GetIsLevelCompleted(i))
             {
                 AddStar(i, 0);
@@ -524,15 +523,17 @@ public class GameManager : MonoBehaviour
 
         // Setting the Win panel start. // TODO:: Later make it another function
         Transform stars = levelButtons[levelIndex].transform.GetChild(0).transform;
-        winPanelStars.transform.GetChild(1).GetComponent<Image>().sprite = filledStarSprite;
-        winPanelStars.transform.GetChild(2).GetComponent<Image>().sprite = filledStarSprite;
-        winPanelStars.transform.GetChild(0).GetComponent<Image>().sprite = filledStarSprite;
 
+
+        winPanelStars.transform.GetChild(0).GetComponent<Image>().sprite = stars.GetChild(0).GetComponent<Image>().sprite;
+        winPanelStars.transform.GetChild(1).GetComponent<Image>().sprite = stars.GetChild(1).GetComponent<Image>().sprite;
+        winPanelStars.transform.GetChild(2).GetComponent<Image>().sprite = stars.GetChild(2).GetComponent<Image>().sprite;
+        
         if (dataHolder.GetIsTutorialCompleted())
         {
-            winPanelStars.transform.GetChild(0).GetComponent<Image>().sprite = stars.GetChild(0).GetComponent<Image>().sprite;
-            winPanelStars.transform.GetChild(1).GetComponent<Image>().sprite = stars.GetChild(1).GetComponent<Image>().sprite;
-            winPanelStars.transform.GetChild(2).GetComponent<Image>().sprite = stars.GetChild(2).GetComponent<Image>().sprite;
+            winPanelStars.transform.GetChild(1).GetComponent<Image>().sprite = filledStarSprite;
+            winPanelStars.transform.GetChild(2).GetComponent<Image>().sprite = filledStarSprite;
+            winPanelStars.transform.GetChild(0).GetComponent<Image>().sprite = filledStarSprite;
         }
     }
 
@@ -718,6 +719,7 @@ public class GameManager : MonoBehaviour
     {
         OpenMenuPanel();
         dataHolder.SetTutorialCompleted();
+
     }
 
     public bool GetIsSoundOn()

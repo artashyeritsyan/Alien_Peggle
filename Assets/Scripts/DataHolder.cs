@@ -44,10 +44,10 @@ public class DataHolder : MonoBehaviour
 
         savePath = Application.persistentDataPath + "/player_progress.json";
 
-        //if (resetTutorial)
-        //{
-        //    PlayerPrefs.SetInt("isTutoriaCompleted", 0);
-        //}
+        if (resetTutorial)
+        {
+            PlayerPrefs.SetInt("isTutoriaCompleted", 0);
+        }
 
         isTutorialCompleted = false;
         InitArrays();
